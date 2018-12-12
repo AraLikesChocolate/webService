@@ -18,7 +18,6 @@
 <body>
 	<jsp:include page="nav.jsp"></jsp:include>
 	<div id="my_container">
-<!-- 		<section> -->
 			<form method="post" autocomplete="off">
 				<!-- 		<p class="intro1"> -->
 				<!-- 			First try to log with anything to see a <strong -->
@@ -64,7 +63,6 @@
 <!-- 				alt="John... Doe?"> <i class="fa fa-refresh fa-spin loading"></i> -->
 <!-- 				<i class="fa fa-check success"></i> <i class="fa fa-times failure"></i> -->
 <!-- 			</span> <span class="morphHeader"><span>SIGN IN</span></span> -->
-		</section>
 	</div>
 
 	<!-- sourceURL=pen.js -->

@@ -3,92 +3,139 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>시작 페이지</title>
-
-<!-- Bootstrap core CSS -->
-<link
-	href="${pageContext.request.contextPath}/asset/vendor/bootstrap/css/bootstrap.min.css"
+<meta charset="UTF-8">
+<title>로그인 페이지</title>
+<link href="${pageContext.request.contextPath}/asset/css/sign.css"
 	rel="stylesheet">
-
-<!-- Custom fonts for this template -->
+<!-- source codepen.io -->
 <link
-	href="${pageContext.request.contextPath}/asset/vendor/fontawesome-free/css/all.min.css"
-	rel="stylesheet" type="text/css">
-<link href="${pageContext.request.contextPath}/asset/css/creative.css"
+	href="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.css"
 	rel="stylesheet">
-
-<!-- Plugin CSS -->
 <link
-	href="${pageContext.request.contextPath}/asset/vendor/magnific-popup/magnific-popup.css"
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
 	rel="stylesheet">
 </head>
-<body id="page-top">
-
+<body>
 	<jsp:include page="nav.jsp"></jsp:include>
-
-	
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-8 mx-auto text-center">
-					<form method="post" action="/signUp/signUp.go" name="userInfo"
-						onsubmit="return checkValue()" style="border: 1px solid #ccc">
-
-						<div class="container">
-							<h1>Join Us!</h1>
-							<p>회원가입을 위해 아래 정보를 입력하여 주십시오.</p>
-							<hr>
-
-							<label for="id"><b>아이디</b></label> <input type="text"
-								placeholder="Enter ID" name="id" required><br>
-							<br> <label for="psw"><b>비밀번호</b></label> <input
-								type="password" placeholder="Enter Password" name="psw" required><br>
-							<br> <label for="psw-repeat"><b>비밀번호 재입력</b></label> <input
-								type="password" placeholder="Repeat Password" name="psw-repeat"
-								required><br>
-							<br> <label for="name"><b>이름</b></label> <input type="text"
-								placeholder="Enter Name" name="name" required><br>
-							<br> <label for="email"><b>이메일</b></label> <input
-								type="text" placeholder="Enter Email" name="email" required><br>
-							<br> <label for="gender"><b>성별</b></label> <input
-								type="radio" name="gender" value="남" checked>남 <input
-								type="radio" name="gender" value="여">여 <br>
-							<br> <label for="birthday"><b>생년월일</b></label> <input
-								type="date" name="birthday"><br>
-							<br> <label> <input type="checkbox" name="remember"
-								style="margin-bottom: 15px"> 내 정보 기억하기
-							</label>
-
-							<div class="clearfix">
-								<button type="button" class="cancelbtn" onclick="goLoginForm()">취소</button>
-								<button type="submit" class="signupbtn">회원가입</button>
-							</div>
+	<div id="my_container">
+		<form method="post" autocomplete="off" class="signUp">
+			<div class="row signRow">
+				<div
+					class="wrapper large-5 columns large-centered small-7 small-centered">
+					<div class="row header">
+						<div class="large-12 columns">SIGN UP</div>
+					</div>
+					
+					<div class="row username">
+						<div class="large-9 columns large-centered">
+							<label for="username"><i class="fa fa-user"></i></label> <input
+								id="username" type="email" name="username"
+								placeholder="john@doe.com" required autocomplete="off" />
 						</div>
-					</form>
+					</div>
+
+					<div class="row password">
+						<div class="large-9 columns large-centered">
+							<label for="password"><i class="fa fa-lock"></i></label> <input
+								id="password" type="password" name="pass" placeholder="password"
+								required autocomplete="off" />
+						</div>
+					</div>
+					  
+					<div class="row password">
+						<div class="large-9 columns large-centered">
+							<label for="password"><i class="fa fa-lock"></i></label> <input
+								id="password" type="password" name="pass" placeholder="password"
+								required autocomplete="off" />
+						</div>
+					</div>
+					
+					<div class="row password">
+						<div class="large-9 columns large-centered">
+							<label for="password"><i class="fa fa-lock"></i></label> <input
+								id="password" type="password" name="pass" placeholder="password"
+								required autocomplete="off" />
+						</div>
+					</div>
+					   	
+					<div class="row password">
+						<div class="large-9 columns large-centered">
+							<label for="password"><i class="fa fa-lock"></i></label> <input
+								id="password" type="password" name="pass" placeholder="password"
+								required autocomplete="off" />
+						</div>
+					</div>
+					
+					<div class="row password">
+						<div class="large-9 columns large-centered">
+							<label for="password"><i class="fa fa-lock"></i></label> <input
+								id="password" type="password" name="pass" placeholder="password"
+								required autocomplete="off" />
+						</div>
+					</div>
+					
+					<div class="row password">
+						<div class="large-9 columns large-centered">
+							<label for="password"><i class="fa fa-lock"></i></label> <input
+								id="password" type="password" name="pass" placeholder="password"
+								required autocomplete="off" />
+						</div>
+					</div>
+					
+					<div class="row password">
+						<div class="large-9 columns large-centered">
+							<label for="password"><i class="fa fa-lock"></i></label> <input
+								id="password" type="password" name="pass" placeholder="password"
+								required autocomplete="off" />
+						</div>
+					</div>
+
+					<div class="row submit">
+						<div class="large-9 columns large-centered">
+							<input type="submit" value="SUBMIT">
+						</div>
+					</div>
 				</div>
 			</div>
-		</div>
+		</form>
+	</div>
 
-	<!-- Bootstrap core JavaScript -->
+	<!-- sourceURL=pen.js -->
 	<script
-		src="${pageContext.request.contextPath}/asset/vendor/jquery/jquery.min.js"></script>
+		src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js'></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/asset/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-	<!-- Plugin JavaScript -->
-	<script
-		src="${pageContext.request.contextPath}/asset/vendor/jquery-easing/jquery.easing.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/asset/vendor/scrollreveal/scrollreveal.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/asset/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
-
+		src='//static.codepen.io/assets/common/stopExecutionOnTimeout-41c52890748cd7143004e05d3c5f786c66b19939c4500ce446314d1748483e13.js'></script>
 	<!-- Custom scripts for this template -->
-	<script
-		src="${pageContext.request.contextPath}/asset/js/creative.min.js"></script>
-
+	<script src="${pageContext.request.contextPath}/asset/js/login.js"></script>
+	
+	<script type="text/javascript">
+    
+        // 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
+        function checkValue()
+        {
+            if(!document.userInfo.id.value){
+                alert("아이디를 입력하세요.");
+                return false;
+            }
+            
+            if(!document.userInfo.password.value){
+                alert("비밀번호를 입력하세요.");
+                return false;
+            }
+            
+            // 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
+            if(document.userInfo.password.value != document.userInfo.passwordcheck.value ){
+                alert("비밀번호를 동일하게 입력하세요.");
+                return false;
+            }
+        }
+        
+        // 취소 버튼 클릭시 로그인 화면으로 이동
+        function goLoginForm() {
+            location.href="login.jsp";
+        }
+    </script>
+	
 </body>
-
 </html>

@@ -71,6 +71,18 @@ form {
   transform: translateY(45%);
 }
 
+form.signUp{
+	 transform: translateY(20%) !important;
+	 margin-bottom: 20%;
+}
+form {
+  position: relative;
+  top: 50% !important;
+/*   -webkit-transform: translateY(-50%); */
+/*   -ms-transform: translateY(-50%); */
+  transform: translateY(45%);
+}
+
 form .row .row {
 /*   margin: 0 -0.9375rem; */
 }
