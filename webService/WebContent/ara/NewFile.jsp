@@ -25,7 +25,8 @@
 					<div class="row header">
 						<div class="large-12 columns">SIGN UP</div>
 					</div>
-					
+
+					<!--이름 -->
 					<div class="row username">
 						<div class="large-9 columns large-centered">
 							<label for="username"><i class="fa fa-user"></i></label> <input
@@ -34,54 +35,7 @@
 						</div>
 					</div>
 
-					<div class="row password">
-						<div class="large-9 columns large-centered">
-							<label for="password"><i class="fa fa-lock"></i></label> <input
-								id="password" type="password" name="pass" placeholder="password"
-								required autocomplete="off" />
-						</div>
-					</div>
-					  
-					<div class="row password">
-						<div class="large-9 columns large-centered">
-							<label for="password"><i class="fa fa-lock"></i></label> <input
-								id="password" type="password" name="pass" placeholder="password"
-								required autocomplete="off" />
-						</div>
-					</div>
-					
-					<div class="row password">
-						<div class="large-9 columns large-centered">
-							<label for="password"><i class="fa fa-lock"></i></label> <input
-								id="password" type="password" name="pass" placeholder="password"
-								required autocomplete="off" />
-						</div>
-					</div>
-					   	
-					<div class="row password">
-						<div class="large-9 columns large-centered">
-							<label for="password"><i class="fa fa-lock"></i></label> <input
-								id="password" type="password" name="pass" placeholder="password"
-								required autocomplete="off" />
-						</div>
-					</div>
-					
-					<div class="row password">
-						<div class="large-9 columns large-centered">
-							<label for="password"><i class="fa fa-lock"></i></label> <input
-								id="password" type="password" name="pass" placeholder="password"
-								required autocomplete="off" />
-						</div>
-					</div>
-					
-					<div class="row password">
-						<div class="large-9 columns large-centered">
-							<label for="password"><i class="fa fa-lock"></i></label> <input
-								id="password" type="password" name="pass" placeholder="password"
-								required autocomplete="off" />
-						</div>
-					</div>
-					
+					<!--패스워드 -->
 					<div class="row password">
 						<div class="large-9 columns large-centered">
 							<label for="password"><i class="fa fa-lock"></i></label> <input
@@ -90,6 +44,61 @@
 						</div>
 					</div>
 
+					<!--아이디 -->
+					<div class="row password">
+						<div class="large-9 columns large-centered">
+							<label for="password"><i class="fa fa-lock"></i></label> <input
+								id="password" type="password" name="pass" placeholder="password"
+								required autocomplete="off" />
+						</div>
+					</div>
+					<!-- 패스워드 확인 -->
+					<div class="row password">
+						<div class="large-9 columns large-centered">
+							<label for="password"><i class="fa fa-lock"></i></label> <input
+								id="password" type="password" name="pass" placeholder="password"
+								required autocomplete="off" />
+						</div>
+					</div>
+					<!-- 이메일 -->
+					<div class="row password">
+						<div class="large-9 columns large-centered">
+							<label for="password"><i class="fa fa-lock"></i></label> <input
+								id="password" type="password" name="pass" placeholder="password"
+								required autocomplete="off" />
+						</div>
+					</div>
+					<!-- 성별 -->
+					<div class="row password">
+						<div class="large-9 columns large-centered">
+							<label for="password"><i class="fa fa-lock"></i></label> <input
+								id="password" type="password" name="pass" placeholder="password"
+								required autocomplete="off" />
+						</div>
+					</div>
+					<!-- 생년월일 -->
+					<div class="row password">
+						<div class="large-9 columns large-centered">
+							<label for="password"><i class="fa fa-lock"></i></label> <input
+								id="password" type="password" name="pass" placeholder="password"
+								required autocomplete="off" />
+						</div>
+					</div>
+					<!-- 내정보기억하기 -->
+					<div class="row password">
+						<div class="large-9 columns large-centered">
+							<label for="password"><i class="fa fa-lock"></i></label> <input
+								id="password" type="password" name="pass" placeholder="password"
+								required autocomplete="off" />
+						</div>
+					</div>
+					<!-- 회원가입 -->
+					<div class="row submit">
+						<div class="large-9 columns large-centered">
+							<input type="submit" value="SUBMIT">
+						</div>
+					</div>
+					<!-- 취소 -->
 					<div class="row submit">
 						<div class="large-9 columns large-centered">
 							<input type="submit" value="SUBMIT">
@@ -108,34 +117,32 @@
 		src='//static.codepen.io/assets/common/stopExecutionOnTimeout-41c52890748cd7143004e05d3c5f786c66b19939c4500ce446314d1748483e13.js'></script>
 	<!-- Custom scripts for this template -->
 	<script src="${pageContext.request.contextPath}/asset/js/login.js"></script>
-	
+
 	<script type="text/javascript">
-    
-        // 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
-        function checkValue()
-        {
-            if(!document.userInfo.id.value){
-                alert("아이디를 입력하세요.");
-                return false;
-            }
-            
-            if(!document.userInfo.password.value){
-                alert("비밀번호를 입력하세요.");
-                return false;
-            }
-            
-            // 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
-            if(document.userInfo.password.value != document.userInfo.passwordcheck.value ){
-                alert("비밀번호를 동일하게 입력하세요.");
-                return false;
-            }
-        }
-        
-        // 취소 버튼 클릭시 로그인 화면으로 이동
-        function goLoginForm() {
-            location.href="login.jsp";
-        }
-    </script>
-	
+		// 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
+		function checkValue() {
+			if (!document.userInfo.id.value) {
+				alert("아이디를 입력하세요.");
+				return false;
+			}
+
+			if (!document.userInfo.password.value) {
+				alert("비밀번호를 입력하세요.");
+				return false;
+			}
+
+			// 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
+			if (document.userInfo.password.value != document.userInfo.passwordcheck.value) {
+				alert("비밀번호를 동일하게 입력하세요.");
+				return false;
+			}
+		}
+
+		// 취소 버튼 클릭시 로그인 화면으로 이동
+		function goLoginForm() {
+			location.href = "login.jsp";
+		}
+	</script>
+
 </body>
 </html>
