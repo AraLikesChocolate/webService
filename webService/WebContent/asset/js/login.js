@@ -11,7 +11,7 @@ $(document).ready(function () {
 });
 
 /* Click on the SUBMIT button */
-$(".submit input[type='submit']").click(function (e) {
+/*$(".submit input[type='submit']").click(function (e) {
 	e.preventDefault();
 
 	var buttonAnim = $(".morphButton");
@@ -34,7 +34,7 @@ $(".submit input[type='submit']").click(function (e) {
 		to($(this), 0, { "opacity": 0, "visibility": "hidden" }).
 		to($(".morphButton"), 0.5, { "width": $(".morphButton").height(), "left": keepMeCentered, ease: Back.easeInOut, onComplete: function () {
 				TweenMax.to($(".loading"), 0.3, { "scale": "1", "display": "inline-block", "opacity": 1, ease: Power4.easeInOut, onComplete: function () {
-						setTimeout(morphSuccess, 300); /* Faking a little the loading process */
+						setTimeout(morphSuccess, 300);  Faking a little the loading process 
 					} });
 			} });
 
@@ -45,12 +45,12 @@ $(".submit input[type='submit']").click(function (e) {
 		to($(this), 0, { "opacity": 0, "visibility": "hidden" }).
 		to($(".morphButton"), 0.5, { "width": $(".morphButton").height(), "left": keepMeCentered, ease: Back.easeInOut, onComplete: function () {
 				TweenMax.to($(".loading"), 0.3, { "scale": "1", "display": "inline-block", "opacity": 1, ease: Power4.easeInOut, onComplete: function () {
-						setTimeout(morphFail, 300); /* Faking a little the loading process */
+						setTimeout(morphFail, 300);  Faking a little the loading process 
 					} });
 			} });
 
 	}
-});
+});*/
 
 function morphSuccess() {
 	TweenMax.to($(".intro2"), 1, { "opacity": 0 });

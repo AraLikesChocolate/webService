@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css?family=Nanum+Myeongjo:400,700,800&subset=korean');
 @import url('https://fonts.googleapis.com/css?family=Do+Hyeon&subset=korean');
 @import url('https://fonts.googleapis.com/css?family=Titillium+Web:400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Nanum+Gothic:400,700&subset=korean');
 input[type="password"]::-ms-reveal,
 input[type="password"]::-ms-clear {
   display: none;
@@ -10,10 +11,19 @@ input[type="password"]::-ms-clear {
 
 body{
 	font-family: 'Titillium Web', 'Do Hyeon', 'Nanum Myeongjo';
+	width: 100%;
+	height: 100%;
+	min-width: 33.3333%;
+	overflow: scroll;
+    overflow-x: hidden;
 }
 /* Removing this since I'll add it myself for browser compatibility */
 input[type="email"],
+input[type="text"],
 input[type="password"],
+input[type="checkbox"],
+input[type="date"],
+input[type="reset"],
 input[type="submit"] {
   -webkit-border-top-left-radius: 360px;
   -moz-border-top-left-radius: 360px;
@@ -34,10 +44,16 @@ input[type="submit"] {
 }
 
 input[type="email"],
+input[type="text"],
+input[type="checkbox"],
+input[type="date"],
 input[type="password"] {
-  padding-left: 2.75em;
+/* 	color: #cccccc !important; */
+  padding-left: 4.3em;
+  font-family:'Titillium Web', 'Do Hyeon', 'Nanum Myeongjo' !important;
 }
 
+input[type="reset"],
 input[type="submit"] {
   width: 100%;
   background-color: #FFA400;
@@ -51,8 +67,16 @@ input[type="submit"] {
   transition: all 0.25s ease-in-out;
 }
 
+.font{
+/* 	padding-left: ; */
+	font-family: 'Titillium Web','Do Hyeon',"Open Sans" !important;
+	font-size: 1.0rem !important;
+	transform: translateY(-5%) !important;
+}
+
+input[type="reset"]:hover,
 input[type="submit"]:hover {
-  background-color: #1677bb;
+  background-color: #D2D7D3;
 }
 
 label {
@@ -72,9 +96,19 @@ form {
 }
 
 form.signUp{
-	 transform: translateY(20%) !important;
-	 margin-bottom: 20%;
+	 transform: translateY(15%) !important;
+	 margin-bottom: 10%;
 }
+
+div.signUpColor{
+/* 	color: #cccccc !important; */
+
+}
+
+#my_container > form > div > div > div.row {
+	margin-bottom: 3%;
+}
+
 form {
   position: relative;
   top: 50% !important;

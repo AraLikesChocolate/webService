@@ -18,7 +18,7 @@
 <body>
 	<jsp:include page="nav.jsp"></jsp:include>
 	<div id="my_container">
-			<form method="post" autocomplete="off">
+			<form method="post" autocomplete="off" action="sign.go">
 				<!-- 		<p class="intro1"> -->
 				<!-- 			First try to log with anything to see a <strong -->
 				<!-- 				style="color: #ff3322">failed</strong> login&hellip; -->
@@ -36,16 +36,16 @@
 
 						<div class="row username">
 							<div class="large-9 columns large-centered">
-								<label for="username"><i class="fa fa-user"></i></label> <input
-									id="username" type="email" name="username"
-									placeholder="john@doe.com" required autocomplete="off" />
+								<label for="id"><i class="fa fa-user"></i></label> <input
+									id="id" type="text" name="id"
+									placeholder="id" required autocomplete="off" />
 							</div>
 						</div>
 
 						<div class="row password">
 							<div class="large-9 columns large-centered">
-								<label for="password"><i class="fa fa-lock"></i></label> <input
-									id="password" type="password" name="pass"
+								<label for="psw"><i class="fa fa-lock"></i></label> <input
+									id="psw" type="password" name="psw"
 									placeholder="password" required autocomplete="off" />
 							</div>
 						</div>
