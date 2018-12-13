@@ -33,7 +33,7 @@
 <link
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
 	rel="stylesheet">
-<style type="text/css">
+<!-- <style type="text/css">
 ::-webkit-scrollbar {
 	width: 50px;
 }
@@ -52,7 +52,7 @@
 	width: 50px;
 	background: black;
 }
-</style>
+</style> -->
 </head>
 <body id="page-top">
 

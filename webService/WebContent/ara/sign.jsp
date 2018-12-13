@@ -18,7 +18,7 @@
 <body>
 	<jsp:include page="nav.jsp"></jsp:include>
 	<div id="my_container">
-			<form method="post" autocomplete="off" action="sign.go">
+			<form method="post" autocomplete="off" action="sign.go" id="signForm">
 				<!-- 		<p class="intro1"> -->
 				<!-- 			First try to log with anything to see a <strong -->
 				<!-- 				style="color: #ff3322">failed</strong> login&hellip; -->

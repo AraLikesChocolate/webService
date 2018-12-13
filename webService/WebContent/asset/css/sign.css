@@ -87,19 +87,6 @@ label {
   color: #999999;
 }
 
-form {
-  position: relative;
-  top: 50% !important;
-/*   -webkit-transform: translateY(-50%); */
-/*   -ms-transform: translateY(-50%); */
-  transform: translateY(45%);
-}
-
-form.signUp{
-	 transform: translateY(15%) !important;
-	 margin-bottom: 10%;
-}
-
 div.signUpColor{
 /* 	color: #cccccc !important; */
 
@@ -107,6 +94,20 @@ div.signUpColor{
 
 #my_container > form > div > div > div.row {
 	margin-bottom: 3%;
+}
+
+
+form.signUp{
+	 transform: translateY(15%) !important;
+	 margin-bottom: 10%;
+}
+
+form#signForm {
+  position: relative;
+  top: 50% !important;
+/*   -webkit-transform: translateY(-50%); */
+/*   -ms-transform: translateY(-50%); */
+  transform: translateY(35%) !important;
 }
 
 form {
