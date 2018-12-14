@@ -65,7 +65,7 @@
 	<jsp:include page="nav.jsp"></jsp:include>
 
 	<div id="my_container">
-		<form method="post" action="ara/signUp/signUp.go" name="userInfo"
+		<form method="post" action="signUp.go" name="userInfo"
 			class="signUp" onsubmit="return checkValue();" autocomplete="off">
 			<div class="row signRow signUpColor">
 				<div
@@ -132,8 +132,8 @@
 					<!-- 내정보기억하기 -->
 					<div class="row password">
 						<div class="large-9 columns large-centered" style="padding-left: 5%;">
-							<label for="myinfo"><i class="fa "></i></label> 내 정보 저장: <input
-								id="myinfo" type="checkbox" name="myinfo" placeholder="내 정보 기억하기"
+							<label for="userinfo"><i class="fa "></i></label> 내 정보 저장: <input
+								id="userinfo" type="checkbox" name="userinfo" placeholder="내 정보 기억하기"
 								required autocomplete="off" style="margin-left:8%"/>
 						</div>
 					</div>

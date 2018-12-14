@@ -10,7 +10,7 @@ public class OracleDBUtil {
 
 	public static Connection getConnection() {
 		Connection conn = null;
-		String url = "jdbc:oracle:thin:@localhost:1521:XE";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String user = "webmaster";
 		String password = "1234";
 

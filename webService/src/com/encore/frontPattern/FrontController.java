@@ -12,6 +12,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.encore.model.UserVO;
+import com.encore.util.DateUtil;
+
 /**
  * Servlet implementation class FrontController
  */
@@ -26,16 +29,19 @@ public class FrontController extends HttpServlet {
 		String requestURI = request.getRequestURI().substring(request.getContextPath().length(),
 				request.getRequestURI().length() - 3);
 		System.out.println("requestURI: " + requestURI);
-//		String userPath = request.getContextPath()+ "/../user/";
+		// String userPath = request.getContextPath()+ "/../user/";
 		response.setCharacterEncoding("utf-8");
 
-		String signFolderName = "/ara";
+		String signFolderName = "";
 		HttpSession sess = request.getSession();
-		if (!(requestURI.equals(signFolderName + "/sign")) && sess.getAttribute("user") == null) {
-			System.out.println(request.getContextPath() + signFolderName + "/sign.go");
-			response.sendRedirect(request.getContextPath() + signFolderName + "/sign.go");
-			return;
-		} else if (requestURI.equals(signFolderName + "/signOut")) {
+		// if (!(requestURI.equals(signFolderName + "/sign")) &&
+		// sess.getAttribute("user") == null) {
+		// System.out.println(request.getContextPath() + signFolderName + "/sign.go");
+		// response.sendRedirect(request.getContextPath() + signFolderName +
+		// "/sign.go");
+		// return;
+		// } else
+		if (requestURI.equals(signFolderName + "/signOut")) {
 			sess.invalidate();
 			response.sendRedirect("index.jsp");
 			return;
@@ -49,30 +55,39 @@ public class FrontController extends HttpServlet {
 
 		switch (requestURI) {
 		// 1. sign
-		case "/ara/sign":
+		case "/sign":
 			controller = new LoginController();
 			if (method.equals("get")) {
-				
-			} else {
-				map.put("id", request.getParameter("id"));
-				map.put("psw", request.getParameter("psw"));
-			}
-			break;
-			
-		case "/ara/mypage":
-//			controller = new LoginController();
-			if (method.equals("get")) {
-				page = "index.jsp";
+
 			} else {
 				map.put("id", request.getParameter("id"));
 				map.put("psw", request.getParameter("psw"));
 			}
 			break;
 
-		case "ara/signUp/signUp.go":
-//			controller = new UploadMajorCtr();
-//			map.put("path", request.getServletContext().getRealPath("csvfile") + "\\major.csv");
-//			page = userPath + "crudResult.jsp";
+		case "/mypage":
+			// controller = new LoginController();
+			if (method.equals("get")) {
+				page = signFolderName + "index.jsp";
+			} else {
+				map.put("id", request.getParameter("id"));
+				map.put("psw", request.getParameter("psw"));
+			}
+			break;
+
+		case "/signUp":
+			controller = new UserInsertController();
+			if (method.equals("get")) {
+				System.out.println("get 도착...");
+				page = signFolderName + "signUp.jsp";
+			} else {
+				System.out.println("post 도착...");
+				map.put("user", new UserVO(request.getParameter("id"), request.getParameter("psw"),
+						request.getParameter("name"), request.getParameter("email"), request.getParameter("gender"),
+						DateUtil.stringToDate(request.getParameter("birthday")), request.getParameter("userinfo")));
+				System.out.println(map.get("user"));
+				page = signFolderName + "userResult.jsp";
+			}
 			break;
 
 		default:
@@ -85,11 +100,11 @@ public class FrontController extends HttpServlet {
 		if (result != null) {
 			if (((String) result).equals("yes")) {
 				sess.setAttribute("user", map.get("user"));
-				response.sendRedirect("index.jsp");
+				response.sendRedirect(signFolderName + "index.jsp");
 				return;
 			} else {
 				System.out.println("로그인에 실패했습니다...");
-				response.sendRedirect("sign.go");
+				response.sendRedirect(signFolderName + "sign.go");
 				return;
 			}
 		}
