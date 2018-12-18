@@ -14,6 +14,10 @@
 <!-- Plugin CSS -->
 <link href="${path}/asset/vendor/magnific-popup/magnific-popup.css"
 	rel="stylesheet">
+
+<script src="${path}/asset/js/modernizr.js"></script>
+<script src="${path}/asset/js/pace.min.js"></script>
+
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
 	<div class="container">
@@ -60,3 +64,17 @@
 		</div>
 	</div>
 </nav>
+<div id="preloader">
+		<div id="loader">
+			<div class="line-scale-pulse-out">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+	</div>
+	<script src="${path}/asset/js/jquery-3.2.1.min.js"></script>
+	<script src="${path}/asset/js/plugins.js"></script>
+	<script src="${path}/asset/js/load.js"></script>
