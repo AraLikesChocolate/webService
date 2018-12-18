@@ -37,7 +37,7 @@ body {
 hr {
 	max-width: 50px;
 	border-width: 3px;
-	border-color: #FFA400;
+	border-color: #ff6666;
 }
 
 hr.light {
@@ -45,13 +45,13 @@ hr.light {
 }
 
 a {
-	color: #FFA400;
+	color: #ff6666;
 	-webkit-transition: all 0.2s;
 	transition: all 0.2s;
 }
 
 a:hover {
-	color: #FFA400;
+	color: #ff6666;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -60,7 +60,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-primary {
-	background-color: #FFA400 !important;
+	background-color: #ff6666 !important;
 }
 
 .bg-dark {
@@ -129,7 +129,7 @@ img::-moz-selection {
 		'Helvetica Neue', Arial, sans-serif;
 }
 
-#FFA400
+#ff6666
 	/* #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover { */
 	/* 	color: #d2d7d3; */
 	/* } */ 
@@ -153,7 +153,7 @@ img::-moz-selection {
 
 #mainNav .navbar-nav>li.nav-item>a.nav-link.active, #mainNav .navbar-nav>li.nav-item>a.nav-link:focus.active
 	{
-	color: #FFA400 !important;
+	color: #ff6666 !important;
 	background-color: transparent;
 }
 
@@ -169,7 +169,7 @@ img::-moz-selection {
 	}
 	#mainNav .navbar-brand {
 		/*     color: rgba(255, 255, 255, 0.7); */
-		color: #FFA400;
+		color: #ff6666;
 	}
 	/* 	#mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover { */
 	/* 		    color: #fff; */
@@ -177,7 +177,7 @@ img::-moz-selection {
 	/* 	} */
 	#mainNav .navbar-brand:hover {
 		/*     color: #fff; */
-		color: #FFA400;
+		color: #ff6666;
 	}
 	#mainNav .navbar-nav>li.nav-item>a.nav-link {
 		padding: 0.5rem 1rem;
@@ -190,7 +190,7 @@ img::-moz-selection {
 	#mainNav .navbar-nav>li.nav-item>a.nav-link:hover, #mainNav .navbar-nav>li.nav-item>a.nav-link:focus:hover
 		{
 		/*     color: #fff; */
-		color: #FFA400;
+		color: #ff6666;
 	}
 	#mainNav.navbar-shrink {
 		border-bottom: 1px solid rgba(33, 37, 41, 0.1);
@@ -201,7 +201,7 @@ img::-moz-selection {
 	}
 	#mainNav.navbar-shrink .navbar-brand:focus, #mainNav.navbar-shrink .navbar-brand:hover
 		{
-		color: #FFA400;
+		color: #ff6666;
 	}
 	#mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link, #mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link:focus
 		{
@@ -210,7 +210,7 @@ img::-moz-selection {
 	#mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link:hover,
 		#mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link:focus:hover
 		{
-		color: #FFA400;
+		color: #ff6666;
 	}
 	section {
 		padding: 9.4rem 0;
@@ -378,7 +378,7 @@ header.masthead p {
 }
 
 .text-primary {
-	color: #FFA400 !important;
+	color: #ff6666 !important;
 }
 
 .btn {
@@ -396,8 +396,8 @@ header.masthead p {
 }
 
 .btn-primary {
-	background-color: #FFA400;
-	border-color: #FFA400;
+	background-color: #ff6666;
+	border-color: #ff6666;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {

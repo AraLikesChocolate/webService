@@ -74,10 +74,10 @@ public class FrontController extends HttpServlet {
 		case "/user/signUp":
 			controller = new UserInsertController();
 			if (method.equals("get")) {
-				System.out.println("get 도착...");
+//				System.out.println("get 도착...");
 				page = signFolderName + "signUp.jsp";
 			} else {
-				System.out.println("post 도착...");
+//				System.out.println("post 도착...");
 				map.put("user", new UserVO(request.getParameter("id"), request.getParameter("password"),
 						request.getParameter("name"), request.getParameter("email"), request.getParameter("gender"),
 						DateUtil.stringToDate(request.getParameter("birthday")), request.getParameter("userinfo")));
@@ -113,11 +113,11 @@ public class FrontController extends HttpServlet {
 		controller.execute(map);
 
 		if (requestURI.equals("/user/IdCheckForm") && method.equals("get")) {
-			System.out.println(map.get("message"));
+//			System.out.println(map.get("message"));
 			response.getWriter().println(map.get("message"));
 			return;
 		} else if (requestURI.equals("/user/IdCheckForm") && method.equals("post")) {
-			System.out.println("method... " + method);
+//			System.out.println("method... " + method);
 			response.getWriter().println(map.get("count"));
 			if ((boolean) map.get("count") == true) {
 				return;
@@ -141,7 +141,7 @@ public class FrontController extends HttpServlet {
 				response.sendRedirect("../index.jsp");
 				return;
 			} else {
-				System.out.println("로그인에 실패했습니다...");
+//				System.out.println("로그인에 실패했습니다...");
 				response.sendRedirect(signFolderName + "sign.go");
 				return;
 			}

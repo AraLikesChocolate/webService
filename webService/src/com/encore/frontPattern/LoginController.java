@@ -15,7 +15,7 @@ public class LoginController implements CommonCtroller {
 			UserService service = new UserService();
 			map.put("user", service.selectUser((String) map.get("id"), (String) map.get("password")));
 			if (map.get("user") != null) {
-				System.out.println(map.get("user"));
+//				System.out.println(map.get("user"));
 				map.put("loginResult", "yes");
 			} else {
 				System.out.println("user가 존재하지 않습니다...");

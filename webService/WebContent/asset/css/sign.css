@@ -56,7 +56,7 @@ input[type="password"] {
 input[type="reset"],
 input[type="submit"] {
   width: 100%;
-  background-color: #FFA400;
+  background-color: #ff6666;
   color: white;
   border: 0;
   padding: 8px;
@@ -201,7 +201,7 @@ p.intro2 {
   border-bottom-right-radius: 0;
   font-size: 1.7em;
 /*   background-image: url("http://www.migloo.be/labs/lab1/img/backgroundBox.png"); */
-  background-color: #FFA400;
+  background-color: #ff6666;
   padding: 2em;
   color: white;
 }
