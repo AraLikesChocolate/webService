@@ -16,7 +16,7 @@
 	rel="stylesheet">
 </head>
 <body>
-	<jsp:include page="nav.jsp"></jsp:include>
+	<jsp:include page="../nav.jsp"></jsp:include>
 	<div id="my_container">
 			<form method="post" autocomplete="off" action="sign.go" id="signForm">
 				<!-- 		<p class="intro1"> -->

@@ -29,21 +29,14 @@ public class FrontController extends HttpServlet {
 		String requestURI = request.getRequestURI().substring(request.getContextPath().length(),
 				request.getRequestURI().length() - 3);
 		System.out.println("requestURI: " + requestURI);
-		// String userPath = request.getContextPath()+ "/../user/";
 		response.setCharacterEncoding("utf-8");
 
 		String signFolderName = "";
 		HttpSession sess = request.getSession();
-		// if (!(requestURI.equals(signFolderName + "/sign")) &&
-		// sess.getAttribute("user") == null) {
-		// System.out.println(request.getContextPath() + signFolderName + "/sign.go");
-		// response.sendRedirect(request.getContextPath() + signFolderName +
-		// "/sign.go");
-		// return;
-		// } else
-		if (requestURI.equals(signFolderName + "/signOut")) {
+	
+		if (requestURI.equals("/user/signOut")) {
 			sess.invalidate();
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("../index.jsp");
 			return;
 		}
 
@@ -52,10 +45,9 @@ public class FrontController extends HttpServlet {
 		String page = null;
 		String method = request.getMethod().toLowerCase();
 		map.put("method", method);
-
 		switch (requestURI) {
 		// 1. sign
-		case "/sign":
+		case "/user/sign":
 			controller = new LoginController();
 			if (method.equals("get")) {
 
@@ -65,19 +57,8 @@ public class FrontController extends HttpServlet {
 			}
 			break;
 
-		// 2.Login
-		case "/mypage":
-			// controller = new LoginController();
-			if (method.equals("get")) {
-				page = signFolderName + "index.jsp";
-			} else {
-				map.put("id", request.getParameter("id"));
-				map.put("password", request.getParameter("password"));
-			}
-			break;
-
 		// 3.userInsert -- 회원가입
-		case "/signUp":
+		case "/user/signUp":
 			controller = new UserInsertController();
 			if (method.equals("get")) {
 				System.out.println("get 도착...");
@@ -93,7 +74,7 @@ public class FrontController extends HttpServlet {
 			break;
 
 		// 4.userUpdate -- 회원정보수정
-		case "/userUpdate":
+		case "/user/userUpdate":
 			controller = new UserUpdateController();
 			map.put("id", (String) request.getParameter("id"));
 			map.put("password", (String) request.getParameter("password"));
@@ -102,11 +83,11 @@ public class FrontController extends HttpServlet {
 			map.put("gender", (String) request.getParameter("gender"));
 			map.put("birthday", (String) request.getParameter("birthday"));
 			map.put("userinfo", (String) request.getParameter("userinfo"));
-			page = method.equals("get") ? "userDetail.jsp" : signFolderName + "userResult.jsp";
+			page = method.equals("get") ? signFolderName + "userDetail.jsp" : signFolderName + "userResult.jsp";
 			break;
 
 		// 5. id 중복체크
-		case "/IdCheckForm":
+		case "/user/IdCheckForm":
 			controller = new IdCheckController();
 			if (method.equals("get")) {
 				map.put("id", (String) request.getParameter("id"));
@@ -121,7 +102,7 @@ public class FrontController extends HttpServlet {
 		}
 		controller.execute(map);
 		
-		if (requestURI.equals("/IdCheckForm")) {
+		if (requestURI.equals("/user/IdCheckForm")) {
 			System.out.println(map.get("message"));
 			response.getWriter().println(map.get("message"));
 			return;
@@ -133,7 +114,7 @@ public class FrontController extends HttpServlet {
 		if (result != null) {
 			if (((String) result).equals("yes")) {
 				sess.setAttribute("user", map.get("user"));
-				response.sendRedirect(signFolderName + "index.jsp");
+				response.sendRedirect("../index.jsp");
 				return;
 			} else {
 				System.out.println("로그인에 실패했습니다...");

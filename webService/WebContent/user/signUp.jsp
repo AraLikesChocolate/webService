@@ -8,25 +8,20 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>시작 페이지</title>
-
+<c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 <!-- Bootstrap core CSS -->
-<link
-	href="${pageContext.request.contextPath}/asset/vendor/bootstrap/css/bootstrap.min.css"
+<link href="${path}/asset/vendor/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
 
 <!-- Custom fonts for this template -->
-<link
-	href="${pageContext.request.contextPath}/asset/vendor/fontawesome-free/css/all.min.css"
+<link href="${path}/asset/vendor/fontawesome-free/css/all.min.css"
 	rel="stylesheet" type="text/css">
-<link href="${pageContext.request.contextPath}/asset/css/creative.css"
-	rel="stylesheet">
+<link href="${path}/asset/css/creative.css" rel="stylesheet">
 
 <!-- Plugin CSS -->
-<link
-	href="${pageContext.request.contextPath}/asset/vendor/magnific-popup/magnific-popup.css"
+<link href="${path}/asset/vendor/magnific-popup/magnific-popup.css"
 	rel="stylesheet">
-<link href="${pageContext.request.contextPath}/asset/css/sign.css"
-	rel="stylesheet">
+<link href="${path}/asset/css/sign.css" rel="stylesheet">
 <!-- source codepen.io -->
 <link
 	href="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.css"
@@ -39,7 +34,7 @@
 </head>
 <body id="page-top">
 
-	<jsp:include page="nav.jsp"></jsp:include>
+	<jsp:include page="../nav.jsp"></jsp:include>
 
 	<div id="my_container">
 		<form method="post" action="signUp.go" name="userInfo" class="signUp"
@@ -60,11 +55,11 @@
 							</c:if>
 							<c:if test="${user == null}">
 								<input id="id" type="text" name="id" placeholder="아이디를 입력하세요."
-									required autocomplete="off"/>
+									required autocomplete="off" />
 							</c:if>
-<!-- 							<input type="button" value="ID check" onclick="openIdChk()"> -->
-<input type="text" id="idCheck" placeholder="아이디 check">
-							<input type="hidden" name="idDuplication" value="idUncheck">
+							<!-- 							<input type="button" value="ID check" onclick="openIdChk()"> -->
+							<input type="text" id="idCheck" placeholder="아이디 중복체크"> <input
+								type="hidden" name="idDuplication" value="idUncheck">
 						</div>
 					</div>
 					<!-- 비밀번호 -->
@@ -125,7 +120,7 @@
 							style="padding-left: 5%;">
 							<label for="userinfo"><i class="fa "></i></label> 내 정보 저장: <input
 								id="userinfo" type="checkbox" name="userinfo"
-								placeholder="내 정보 기억하기" required autocomplete="off"
+								placeholder="내 정보 기억하기" autocomplete="off"
 								style="margin-left: 8%" />
 						</div>
 					</div>
@@ -138,7 +133,7 @@
 					<!-- 취소 -->
 					<div class="row submit">
 						<div class="large-9 columns large-centered">
-							<input type="reset" value="RESET">
+							<input type="reset" value="CANCEL">
 						</div>
 					</div>
 				</div>
@@ -146,22 +141,17 @@
 		</form>
 	</div>
 
-	<script
-		src="${pageContext.request.contextPath}/asset/vendor/jquery/jquery.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/asset/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="${path}/asset/vendor/jquery/jquery.min.js"></script>
+	<script src="${path}/asset/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 	<!-- Plugin JavaScript -->
+	<script src="${path}/asset/vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script src="${path}/asset/vendor/scrollreveal/scrollreveal.min.js"></script>
 	<script
-		src="${pageContext.request.contextPath}/asset/vendor/jquery-easing/jquery.easing.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/asset/vendor/scrollreveal/scrollreveal.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath}/asset/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+		src="${path}/asset/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
 	<!-- Custom scripts for this template -->
-	<script
-		src="${pageContext.request.contextPath}/asset/js/creative.min.js"></script>
+	<script src="${path}/asset/js/creative.min.js"></script>
 	<!-- sourceURL=pen.js -->
 	<script
 		src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js'></script>
@@ -169,74 +159,52 @@
 	<script
 		src='//static.codepen.io/assets/common/stopExecutionOnTimeout-41c52890748cd7143004e05d3c5f786c66b19939c4500ce446314d1748483e13.js'></script>
 	<!-- Custom scripts for this template -->
-	<script src="${pageContext.request.contextPath}/asset/js/login.js"></script>
+	<script src="${path}/asset/js/login.js"></script>
 	<script type="text/javascript">
-	// 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
-	function _repeatValue() {
-		if (!document.userInfo.id.value) {
-			alert("아이디를 입력하세요.");
-			return false;
+		// 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
+		function _repeatValue() {
+			if (!document.userInfo.id.value) {
+				alert("아이디를 입력하세요.");
+				return false;
+			}
+
+			if (!document.userInfo.password.value) {
+				alert("비밀번호를 입력하세요.");
+				return false;
+			}
+
+			// 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
+			if (document.userInfo.password.value != document.userInfo.password_repeat.value) {
+				alert("비밀번호를 동일하게 입력하세요.");
+				return false;
+			}
+
+			if (!document.userInfo.name.value) {
+				alert("이름을 입력하세요.");
+				return false;
+			}
 		}
-		if (document.userInfo.idDuplication.value != "idCheck") {
-			alert("아이디 중복체크를 해주세요.");
-			return false;
+
+		function goLoginForm() {
+			location.href = "login.jsp";
 		}
-
-		if (!document.userInfo.password.value) {
-			alert("비밀번호를 입력하세요.");
-			return false;
-		}
-
-		// 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
-		if (document.userInfo.password.value != document.userInfo.password_repeat.value) {
-			alert("비밀번호를 동일하게 입력하세요.");
-			return false;
-		}
-
-		if (!document.userInfo.name.value) {
-			alert("이름을 입력하세요.");
-			return false;
-		}
-	}
-
-	// 아이디 중복체크 화면Open
-	function openIdChk() {
-		window.name = "parentForm";
-		window.open("IdCheckForm.go?id=" + document.getElementById('id').value,
-				"chkForm",
-				"width=500, height=300, resizable = no, scrollbars = no");
-	}
-
-	function inputIdChk() {
-		document.userInfo.idDuplication.value = "idUncheck";
-	}
-
-	// 취소 버튼 클릭시 로그인 화면으로 이동
-	function goLoginForm() {
-		location.href = "login.jsp";
-	}
-	
-	$(function(){
-		  var id = $('#id');
-		  id.blur(function(){
-			  $('#idCheck').val("포커스 떠남..");
-			  var xhttp = new XMLHttpRequest();
-		        xhttp.onreadystatechange = function() {
-		            if (this.readyState == 4 && this.status == 200) {
-		            	var result = this.responseText.toString();
-		            	console.log("result " + result.length);
-		                if( result.length == 6){
-		                	console.log("id");
-		                	 $('#idCheck').val("사용가능한 아이디입니다.");
-		                } else{
-		                
-		                	 $('#idCheck').val("사용불가능한 아이디입니다.");
-		                	 id.val('');
-		                }
-		            }
-		        };
-				xhttp.open("GET", "IdCheckForm.go?id=" + document.getElementById('id').value, true);
-				xhttp.send();
+		var isNew = '';
+		$(function() {
+			var id = $('#id');
+			id.blur(function() {
+				var url = "IdCheckForm.go?id="
+						+ document.getElementById('id').value;
+				$.get(url, function(data, status) {
+					if (status == "success") {
+						isNew = data;
+						if (isNew.length == 6)
+							$('#idCheck').val("사용가능한 아이디입니다.");
+						else {
+							$('#idCheck').val("사용불가능한 아이디입니다.");
+							id.val('');
+						}
+					}
+				});
 			});
 		});
 	</script>
