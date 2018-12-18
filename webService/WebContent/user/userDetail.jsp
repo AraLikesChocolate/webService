@@ -78,7 +78,7 @@
 					<div class="row username">
 						<div class="large-9 columns large-centered">
 							<label for="username"><i class="fa fa-user"></i></label> <input
-								id="id" type="text" name="id" value="${user.name }" required
+								id="id" type="text" name="id" value="${user.id }" required
 								autocomplete="off" readonly="readonly" />
 						</div>
 					</div>
