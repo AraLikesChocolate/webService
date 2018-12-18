@@ -33,7 +33,7 @@ public class FrontController extends HttpServlet {
 
 		String signFolderName = "";
 		HttpSession sess = request.getSession();
-	
+
 		if (requestURI.equals("/user/signOut")) {
 			sess.invalidate();
 			response.sendRedirect("../index.jsp");
@@ -54,6 +54,19 @@ public class FrontController extends HttpServlet {
 			} else {
 				map.put("id", request.getParameter("id"));
 				map.put("password", request.getParameter("password"));
+			}
+			break;
+
+		// 2. id 중복체크 , pw 확인
+		case "/user/IdCheckForm":
+			controller = new IdCheckController();
+			if (method.equals("get")) {
+				map.put("id", (String) request.getParameter("id"));
+				// page=signFolderName+"userIdCheck.jsp";
+			} else {
+				System.out.println(sess.getAttribute("user"));
+				map.put("id", ((UserVO) sess.getAttribute("user")).getId());
+				map.put("password", (String) request.getParameter("password"));
 			}
 			break;
 
@@ -85,30 +98,38 @@ public class FrontController extends HttpServlet {
 			map.put("userinfo", (String) request.getParameter("userinfo"));
 			page = method.equals("get") ? signFolderName + "userDetail.jsp" : signFolderName + "userResult.jsp";
 			break;
-
-		// 5. id 중복체크
-		case "/user/IdCheckForm":
-			controller = new IdCheckController();
-			if (method.equals("get")) {
-				map.put("id", (String) request.getParameter("id"));
-
-				// page=signFolderName+"userIdCheck.jsp";
-
-			}
+	
+		//5.userDelete --회원탈퇴 처리
+		case "/user/userDelete":
+			controller = new UserDeleteController();
+			String userid = request.getParameter("id");
+			map.put("userid", userid);
+			page = "userResult.jsp";
 			break;
 
 		default:
 			break;
 		}
 		controller.execute(map);
-		
-		if (requestURI.equals("/user/IdCheckForm")) {
+
+		if (requestURI.equals("/user/IdCheckForm") && method.equals("get")) {
 			System.out.println(map.get("message"));
 			response.getWriter().println(map.get("message"));
 			return;
+		} else if (requestURI.equals("/user/IdCheckForm") && method.equals("post")) {
+			System.out.println("method... " + method);
+			response.getWriter().println(map.get("count"));
+			if ((boolean) map.get("count") == true) {
+//				map.put("userResult", "회원 탈퇴가 성공적으로 이루어졌습니다.");
+//				sess.invalidate();
+				return;
+			} else {
+//				map.put("userResult", "회원 탈퇴가 이루어지지 않았습니다.");
+//				page = signFolderName + "userResult.jsp";
+				return;
+			}
 		}
-		
-		
+
 		// 로그인 인증되면 index.jsp로 이동, 인증되지 않으면 sign.jsp로 이동 --> redirect 해야함
 		Object result = map.get("loginResult");
 		if (result != null) {
@@ -126,7 +147,6 @@ public class FrontController extends HttpServlet {
 		for (String key : map.keySet())
 			request.setAttribute(key, map.get(key));
 
-		
 		RequestDispatcher view = request.getRequestDispatcher(page);
 		view.forward(request, response);
 	}

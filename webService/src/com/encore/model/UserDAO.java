@@ -141,7 +141,7 @@ public class UserDAO {
 		Connection conn = null;
 		PreparedStatement st = null;
 		ResultSet rs = null;
-		boolean bool = false;
+		boolean isNew = false;
         try {
         	//쿼리
             conn = OracleDBUtil.getConnection();
@@ -149,15 +149,69 @@ public class UserDAO {
 		    st.setString(1, id);
 		    rs = st.executeQuery();
 		    if(rs.next() == false) {
-		    	bool = true; //해당 아이디 존재
+		    	isNew = true; //해당 아이디 존재X
 		    }
-		    System.out.println(id + "  " + bool);
-	        return bool;
+		    System.out.println(id + "  " + isNew);
+	        return isNew;
 		} catch (Exception sqle) {
             throw new RuntimeException(sqle.getMessage());
         } finally {
         	OracleDBUtil.dbDisconnect(conn, rs, st);
         }
+	}
+
+
+	public static int deleteUser(String id) {
+		int count =0;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			conn = OracleDBUtil.getConnection();
+			conn.setAutoCommit(false);
+			pstmt = conn.prepareStatement("delete from userinfo where id= ? ");
+			pstmt.setString(1, id);
+			count = pstmt.executeUpdate();
+			conn.commit();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			try {
+				conn.rollback();
+			} catch (SQLException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			e.printStackTrace();
+		} finally {
+			OracleDBUtil.dbDisconnect(conn, rs, pstmt);
+		}
+		return count;
+	}
+
+
+	public static boolean checkUserPw(String id, String password) {
+		Connection conn = null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		boolean isSame = true;
+        try {
+        	//쿼리
+            conn = OracleDBUtil.getConnection();
+			st = conn.prepareStatement("select * from userinfo where id = ? and password = ?");
+		    st.setString(1, id);
+		    st.setString(2, password);
+		    rs = st.executeQuery();
+		    if(rs.next() == false) {
+		    	isSame = false; //해당 아이디 존재
+		    }
+		    System.out.println("id: " + id + "   psw: " + password + "  isSame??  " + isSame);
+	        return isSame;
+		} catch (Exception sqle) {
+            throw new RuntimeException(sqle.getMessage());
+        } finally {
+        	OracleDBUtil.dbDisconnect(conn, rs, st);
+        }
+
 	}
 	
 }

@@ -18,6 +18,14 @@ public class IdCheckController implements CommonCtroller {
 			} else {
 				map.put("message", idCheck);
 			}
+		} else {
+			boolean pwCheck = service.checkUserPw((String)map.get("id"), (String)map.get("password"));
+//			System.out.println(idCheck);
+			if(pwCheck) {
+				map.put("count", pwCheck);
+			} else {
+				map.put("count", pwCheck);
+			}
 		}
 	}
 

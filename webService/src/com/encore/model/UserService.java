@@ -11,6 +11,10 @@ public class UserService {
 		return UserDAO.selectAllUser();
 	}
 
+	public boolean checkUserId(String id) {
+		return UserDAO.CheckUserId(id);
+	}
+
 	public int insertUser(UserVO user) {
 		return UserDAO.insertUser(user);
 	}
@@ -19,8 +23,13 @@ public class UserService {
 		return UserDAO.updateUser(user);
 	}
 
-	public boolean checkUserId(String id) {
-		return UserDAO.CheckUserId(id);
+	public int deleteUser(String id) {
+		return UserDAO.deleteUser(id);
+	}
+
+	public boolean checkUserPw(String id, String password) {
+		// TODO Auto-generated method stub
+		return UserDAO.checkUserPw(id,password);
 	}
 
 	
