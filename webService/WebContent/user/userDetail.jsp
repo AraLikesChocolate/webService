@@ -141,7 +141,7 @@
 						<div class="large-9 columns large-centered"
 							style="padding-left: 5%;">
 							<label for="userinfo"><i class="fa "></i></label> 내 정보 저장: <input
-								type="checkbox" placeholder="내 정보 기억하기" required
+								type="checkbox" placeholder="내 정보 기억하기" 
 								autocomplete="off" style="margin-left: 8%" />
 						</div>
 					</div>
