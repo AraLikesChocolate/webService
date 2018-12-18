@@ -11,7 +11,7 @@ public class UserDeleteController implements CommonCtroller {
 		UserService service = new UserService();
 		 
 		int count = service.deleteUser((String) map.get("userid"));
-		map.put("count", count);
+		map.put("userResult", count);
 
 	}
 

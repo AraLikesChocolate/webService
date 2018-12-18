@@ -172,6 +172,7 @@ public class UserDAO {
 			pstmt = conn.prepareStatement("delete from userinfo where id= ? ");
 			pstmt.setString(1, id);
 			count = pstmt.executeUpdate();
+			System.out.println("id: " + id + "  count: " + count);
 			conn.commit();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

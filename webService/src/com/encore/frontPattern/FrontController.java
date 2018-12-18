@@ -98,13 +98,13 @@ public class FrontController extends HttpServlet {
 			map.put("userinfo", (String) request.getParameter("userinfo"));
 			page = method.equals("get") ? signFolderName + "userDetail.jsp" : signFolderName + "userResult.jsp";
 			break;
-	
-		//5.userDelete --회원탈퇴 처리
+
+		// 5.userDelete --회원탈퇴 처리
 		case "/user/userDelete":
 			controller = new UserDeleteController();
-			String userid = request.getParameter("id");
+			String userid = ((UserVO)sess.getAttribute("user")).getId();
 			map.put("userid", userid);
-			page = "userResult.jsp";
+			page = signFolderName + "userResult.jsp";
 			break;
 
 		default:
@@ -120,14 +120,17 @@ public class FrontController extends HttpServlet {
 			System.out.println("method... " + method);
 			response.getWriter().println(map.get("count"));
 			if ((boolean) map.get("count") == true) {
-//				map.put("userResult", "회원 탈퇴가 성공적으로 이루어졌습니다.");
-//				sess.invalidate();
 				return;
 			} else {
-//				map.put("userResult", "회원 탈퇴가 이루어지지 않았습니다.");
-//				page = signFolderName + "userResult.jsp";
 				return;
 			}
+		} else if (requestURI.equals("/user/userDelete")) {
+			if ((int) map.get("userResult") > 0) {
+				sess.invalidate();
+				map.put("userResult", "회원 탈퇴가 성공적으로 이루어졌습니다.");
+			} else
+				map.put("userResult", "회원 탈퇴가 이루어지지 않았습니다.");
+			page = signFolderName + "userResult.jsp";
 		}
 
 		// 로그인 인증되면 index.jsp로 이동, 인증되지 않으면 sign.jsp로 이동 --> redirect 해야함

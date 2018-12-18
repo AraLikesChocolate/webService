@@ -9,6 +9,9 @@
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 <script src="${path}/asset/vendor/jquery/jquery.min.js"></script>
 <script type="text/javascript">
+	function redirect() {
+		window.location.href = '${path}/index.jsp';
+	}
 	// 비밀번호 미입력시 경고창
 	function checkValue() {
 		if (!document.userDelete.password.value) {
@@ -20,16 +23,19 @@
 	$(function() {
 		var password = $('#password');
 		password.blur(function() {
-			var url = "IdCheckForm.go?password=" + document.getElementById('password').value;
+			var url = "IdCheckForm.go?password="
+					+ document.getElementById('password').value;
 			$.post(url, function(data, status) {
 				if (status == "success") {
 					isSame = data;
 					console.log(isSame.length)
-					if (isSame.length == 6)
+					if (isSame.length == 6) {
 						$('#pwCheck').val("회원탈퇴가 가능합니다.");
-					else {
+						$("#exit").prop("disabled", false);
+					} else {
 						$('#pwCheck').val("잘못된 비밀번호입니다.");
 						password.val('');
+						$("#exit").prop("disabled", true);
 					}
 				}
 			});
@@ -46,24 +52,23 @@
 	<br>
 	<br>
 	<br>
-	<form name="userDelete" method="post"
-		action="index.jsp?contentPage=member/pro/DeletePro.jsp"
+	<form name="userDelete" method="post" action="userDelete.go"
 		onsubmit="return checkValue()">
 
 		<table>
 			<tr>
 				<td>비밀번호</td>
-				<td><input type="password" id="password" name="password" maxlength="50"></td>
+				<td><input type="password" id="password" name="password"
+					maxlength="50"></td>
 				<td><input type="text" id="pwCheck" maxlength="50"></td>
 			</tr>
 		</table>
 
-		<br> <input type="button" value="취소"
-			onclick="javascript:window.location='index.jsp'"> <input
-			type="submit" value="탈퇴" />
+		<br> <input type="button" value="취소" onclick="redirect()">
+		<input type="submit" id="exit" value="탈퇴" disabled="disable	d" onsubmit="return true" />
 	</form>
-	
 
-<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> -->
+
+	<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> -->
 </body>
 </html>
