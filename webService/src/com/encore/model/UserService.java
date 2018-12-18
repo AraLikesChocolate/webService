@@ -14,4 +14,14 @@ public class UserService {
 	public int insertUser(UserVO user) {
 		return UserDAO.insertUser(user);
 	}
+	
+	public int updateUser(UserVO user) {
+		return UserDAO.updateUser(user);
+	}
+
+	public boolean checkUserId(String id) {
+		return UserDAO.CheckUserId(id);
+	}
+
+	
 }

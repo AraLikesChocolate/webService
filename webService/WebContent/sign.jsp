@@ -45,7 +45,7 @@
 						<div class="row password">
 							<div class="large-9 columns large-centered">
 								<label for="psw"><i class="fa fa-lock"></i></label> <input
-									id="psw" type="password" name="psw"
+									id="psw" type="password" name="password"
 									placeholder="password" required autocomplete="off" />
 							</div>
 						</div>

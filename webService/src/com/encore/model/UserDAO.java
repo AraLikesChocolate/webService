@@ -38,7 +38,7 @@ public class UserDAO {
 		return user;
 	}
 	
-	
+
 	public static List<UserVO> selectAllUser(){
 		Connection conn = null;
 		Statement st = null;
@@ -104,6 +104,60 @@ public class UserDAO {
 		}
 		
 		return count;
+	}
+
+
+	public static int updateUser(UserVO user) {
+		int count = 0;
+		Connection conn = null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		try {
+			conn = OracleDBUtil.getConnection();
+			st = conn.prepareStatement(
+					"update userinfo set password = ?, name = ?, email = ?, "
+					+ " gender = ?, birthday =?, userinfo = ? "
+					+ " where id = ?");
+			st.setString(1, user.getPassword());
+			st.setString(2, user.getName());
+			st.setString(3, user.getEmail());
+			st.setString(4, user.getGender());
+			st.setDate(5, user.getBirthday());
+			st.setString(6, user.getUserinfo());
+			st.setString(7, user.getId());
+			count = st.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			OracleDBUtil.dbDisconnect(conn, rs, st);
+		}
+		
+		return count;
+	}
+
+	public static boolean CheckUserId(String id) {
+		Connection conn = null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		boolean bool = false;
+        try {
+        	//쿼리
+            conn = OracleDBUtil.getConnection();
+			st = conn.prepareStatement("select id from userinfo where id = ?");
+		    st.setString(1, id);
+		    rs = st.executeQuery();
+		    if(rs.next() == false) {
+		    	bool = true; //해당 아이디 존재
+		    }
+		    System.out.println(id + "  " + bool);
+	        return bool;
+		} catch (Exception sqle) {
+            throw new RuntimeException(sqle.getMessage());
+        } finally {
+        	OracleDBUtil.dbDisconnect(conn, rs, st);
+        }
 	}
 	
 }

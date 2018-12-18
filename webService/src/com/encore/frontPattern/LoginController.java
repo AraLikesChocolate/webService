@@ -13,7 +13,7 @@ public class LoginController implements CommonCtroller {
 
 		} else {
 			UserService service = new UserService();
-			map.put("user", service.selectUser((String) map.get("id"), (String) map.get("psw")));
+			map.put("user", service.selectUser((String) map.get("id"), (String) map.get("password")));
 			if (map.get("user") != null) {
 				System.out.println(map.get("user"));
 				map.put("loginResult", "yes");

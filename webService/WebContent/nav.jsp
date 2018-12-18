@@ -43,8 +43,17 @@
 				</c:if>
 				
 				<c:if test="${sessionScope.user != null}">
-				<li class="nav-item"><a class="nav-link js-scroll-trigger"
-						href="mypage.go">마이페이지</a></li>
+						<div class="dropdown show">
+						  <a class="btn btn-secondary dropdown-toggle" href="https://example.com" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						    	마이페이지
+						  </a>
+						
+						  <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+						    <a class="dropdown-item" href="userUpdate.go">회원정보 수정</a>
+					       	<a class="dropdown-item" href="#">내 위치 추가</a>
+						    <a class="dropdown-item" href="#">즐겨찾기</a>
+						  </div>
+						</div>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="signOut.go">${sessionScope.user.name}님 로그아웃</a></li>
 				</c:if>

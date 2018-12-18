@@ -61,20 +61,22 @@ public class FrontController extends HttpServlet {
 
 			} else {
 				map.put("id", request.getParameter("id"));
-				map.put("psw", request.getParameter("psw"));
+				map.put("password", request.getParameter("password"));
 			}
 			break;
 
+		// 2.Login
 		case "/mypage":
 			// controller = new LoginController();
 			if (method.equals("get")) {
 				page = signFolderName + "index.jsp";
 			} else {
 				map.put("id", request.getParameter("id"));
-				map.put("psw", request.getParameter("psw"));
+				map.put("password", request.getParameter("password"));
 			}
 			break;
 
+		// 3.userInsert -- 회원가입
 		case "/signUp":
 			controller = new UserInsertController();
 			if (method.equals("get")) {
@@ -82,7 +84,7 @@ public class FrontController extends HttpServlet {
 				page = signFolderName + "signUp.jsp";
 			} else {
 				System.out.println("post 도착...");
-				map.put("user", new UserVO(request.getParameter("id"), request.getParameter("psw"),
+				map.put("user", new UserVO(request.getParameter("id"), request.getParameter("password"),
 						request.getParameter("name"), request.getParameter("email"), request.getParameter("gender"),
 						DateUtil.stringToDate(request.getParameter("birthday")), request.getParameter("userinfo")));
 				System.out.println(map.get("user"));
@@ -90,11 +92,42 @@ public class FrontController extends HttpServlet {
 			}
 			break;
 
+		// 4.userUpdate -- 회원정보수정
+		case "/userUpdate":
+			controller = new UserUpdateController();
+			map.put("id", (String) request.getParameter("id"));
+			map.put("password", (String) request.getParameter("password"));
+			map.put("name", (String) request.getParameter("name"));
+			map.put("email", (String) request.getParameter("email"));
+			map.put("gender", (String) request.getParameter("gender"));
+			map.put("birthday", (String) request.getParameter("birthday"));
+			map.put("userinfo", (String) request.getParameter("userinfo"));
+			page = method.equals("get") ? "userDetail.jsp" : signFolderName + "userResult.jsp";
+			break;
+
+		// 5. id 중복체크
+		case "/IdCheckForm":
+			controller = new IdCheckController();
+			if (method.equals("get")) {
+				map.put("id", (String) request.getParameter("id"));
+
+				// page=signFolderName+"userIdCheck.jsp";
+
+			}
+			break;
+
 		default:
 			break;
 		}
 		controller.execute(map);
-
+		
+		if (requestURI.equals("/IdCheckForm")) {
+			System.out.println(map.get("message"));
+			response.getWriter().println(map.get("message"));
+			return;
+		}
+		
+		
 		// 로그인 인증되면 index.jsp로 이동, 인증되지 않으면 sign.jsp로 이동 --> redirect 해야함
 		Object result = map.get("loginResult");
 		if (result != null) {
@@ -112,6 +145,7 @@ public class FrontController extends HttpServlet {
 		for (String key : map.keySet())
 			request.setAttribute(key, map.get(key));
 
+		
 		RequestDispatcher view = request.getRequestDispatcher(page);
 		view.forward(request, response);
 	}

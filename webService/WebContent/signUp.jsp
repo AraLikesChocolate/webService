@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%><%@ taglib prefix="c"
+	uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -33,31 +34,7 @@
 <link
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
 	rel="stylesheet">
-<script type="text/javascript">
-	// 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
-	function checkValue() {
-		if (!document.userInfo.id.value) {
-			alert("아이디를 입력하세요.");
-			return false;
-		}
 
-		if (!document.userInfo.password.value) {
-			alert("비밀번호를 입력하세요.");
-			return false;
-		}
-
-		// 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
-		if (document.userInfo.password.value != document.userInfo.passwordcheck.value) {
-			alert("비밀번호를 동일하게 입력하세요.");
-			return false;
-		}
-	}
-
-	// 취소 버튼 클릭시 로그인 화면으로 이동
-	function goLoginForm() {
-		location.href = "login.jsp";
-	}
-</script>
 
 </head>
 <body id="page-top">
@@ -65,8 +42,8 @@
 	<jsp:include page="nav.jsp"></jsp:include>
 
 	<div id="my_container">
-		<form method="post" action="signUp.go" name="userInfo"
-			class="signUp" onsubmit="return checkValue();" autocomplete="off">
+		<form method="post" action="signUp.go" name="userInfo" class="signUp"
+			onsubmit="return _repeatValue();" autocomplete="off">
 			<div class="row signRow signUpColor">
 				<div
 					class="wrapper large-5 columns large-centered small-7 small-centered">
@@ -76,32 +53,41 @@
 					<!-- 아이디 -->
 					<div class="row username">
 						<div class="large-9 columns large-centered">
-							<label for="username"><i class="fa fa-user"></i></label> <input
-								id="id" type="text" name="id"
-								placeholder="아이디를 입력하세요." required autocomplete="off" />
+							<label for="username"><i class="fa fa-user"></i></label>
+							<c:if test="${user != null}">
+								<input id="id" type="text" name="id" placeholder="아이디를 입력하세요."
+									required autocomplete="off" readonly="readonly" />
+							</c:if>
+							<c:if test="${user == null}">
+								<input id="id" type="text" name="id" placeholder="아이디를 입력하세요."
+									required autocomplete="off"/>
+							</c:if>
+<!-- 							<input type="button" value="ID check" onclick="openIdChk()"> -->
+<input type="text" id="idCheck" placeholder="아이디 check">
+							<input type="hidden" name="idDuplication" value="idUncheck">
 						</div>
 					</div>
 					<!-- 비밀번호 -->
 					<div class="row password">
 						<div class="large-9 columns large-centered">
-							<label for="psw"><i class="fa fa-lock"></i></label> <input
-								id="psw" type="password" name="psw" placeholder="비밀번호를 입력하세요."
-								required autocomplete="off" />
+							<label for="password"><i class="fa fa-lock"></i></label> <input
+								id="password" type="password" name="password"
+								placeholder="비밀번호를 입력하세요." required autocomplete="off" />
 						</div>
 					</div>
 					<!-- 비밀번호 재입력 -->
 					<div class="row password">
 						<div class="large-9 columns large-centered">
-							<label for="psw-repeat"><i class="fa fa-lock"></i></label> <input
-								id="psw-repeat" type="password" name="psw-repeat" placeholder="비밀번호를 다시 입력하세요."
-								required autocomplete="off" />
+							<label for="password-repeat"><i class="fa fa-lock"></i></label> <input
+								id="password_repeat" type="password" name="password_repeat"
+								placeholder="비밀번호를 다시 입력하세요." required autocomplete="off" />
 						</div>
 					</div>
 					<!-- 이름 -->
 					<div class="row password">
 						<div class="large-9 columns large-centered">
 							<label for="name"><i class="fa font">이름</i></label> <input
-								id="name" type="password" name="name" placeholder="이름을 입력하세요."
+								id="name" type="text" name="name" placeholder="이름을 입력하세요."
 								required autocomplete="off" />
 						</div>
 					</div>
@@ -110,31 +96,37 @@
 						<div class="large-9 columns large-centered">
 							<label for="email"><i class="fa font">이메일</i></label> <input
 								id="email" type="email" name="email" placeholder="이메일을 입력하세요."
-								required autocomplete="off" style="padding-right: 5%;"/>
+								required autocomplete="off" style="padding-right: 5%;" />
 						</div>
 					</div>
 					<!-- 성별 -->
 					<div class="row password">
-						<div class="large-9 columns large-centered" style="padding-left: 5%;">
-							<label for="gender"></label>성별:<div style="display:inline; margin-left:20%"><input
-								id="gender" type="radio" name="gender" value="M" checked> 남<input
-								id="gender" type="radio" name="gender" value="F" style="margin-left:20%"> 여</div>
+						<div class="large-9 columns large-centered"
+							style="padding-left: 5%;">
+							<label for="gender"></label>성별:
+							<div style="display: inline; margin-left: 20%">
+								<input id="gender" type="radio" name="gender" value="M" checked>
+								남<input id="gender" type="radio" name="gender" value="F"
+									style="margin-left: 20%"> 여
+							</div>
 						</div>
 					</div>
 					<!-- 생년월일 -->
 					<div class="row password">
 						<div class="large-9 columns large-centered">
 							<label for="birthday"><i class="fa "></i></label> <input
-								id="birthday" type="date" name="birthday"
-								required autocomplete="off" />
+								id="birthday" type="date" name="birthday" required
+								autocomplete="off" />
 						</div>
 					</div>
 					<!-- 내정보기억하기 -->
 					<div class="row password">
-						<div class="large-9 columns large-centered" style="padding-left: 5%;">
+						<div class="large-9 columns large-centered"
+							style="padding-left: 5%;">
 							<label for="userinfo"><i class="fa "></i></label> 내 정보 저장: <input
-								id="userinfo" type="checkbox" name="userinfo" placeholder="내 정보 기억하기"
-								required autocomplete="off" style="margin-left:8%"/>
+								id="userinfo" type="checkbox" name="userinfo"
+								placeholder="내 정보 기억하기" required autocomplete="off"
+								style="margin-left: 8%" />
 						</div>
 					</div>
 					<!-- 회원가입 -->
@@ -178,6 +170,76 @@
 		src='//static.codepen.io/assets/common/stopExecutionOnTimeout-41c52890748cd7143004e05d3c5f786c66b19939c4500ce446314d1748483e13.js'></script>
 	<!-- Custom scripts for this template -->
 	<script src="${pageContext.request.contextPath}/asset/js/login.js"></script>
+	<script type="text/javascript">
+	// 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
+	function _repeatValue() {
+		if (!document.userInfo.id.value) {
+			alert("아이디를 입력하세요.");
+			return false;
+		}
+		if (document.userInfo.idDuplication.value != "idCheck") {
+			alert("아이디 중복체크를 해주세요.");
+			return false;
+		}
+
+		if (!document.userInfo.password.value) {
+			alert("비밀번호를 입력하세요.");
+			return false;
+		}
+
+		// 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
+		if (document.userInfo.password.value != document.userInfo.password_repeat.value) {
+			alert("비밀번호를 동일하게 입력하세요.");
+			return false;
+		}
+
+		if (!document.userInfo.name.value) {
+			alert("이름을 입력하세요.");
+			return false;
+		}
+	}
+
+	// 아이디 중복체크 화면Open
+	function openIdChk() {
+		window.name = "parentForm";
+		window.open("IdCheckForm.go?id=" + document.getElementById('id').value,
+				"chkForm",
+				"width=500, height=300, resizable = no, scrollbars = no");
+	}
+
+	function inputIdChk() {
+		document.userInfo.idDuplication.value = "idUncheck";
+	}
+
+	// 취소 버튼 클릭시 로그인 화면으로 이동
+	function goLoginForm() {
+		location.href = "login.jsp";
+	}
+	
+	$(function(){
+		  var id = $('#id');
+		  id.blur(function(){
+			  $('#idCheck').val("포커스 떠남..");
+			  var xhttp = new XMLHttpRequest();
+		        xhttp.onreadystatechange = function() {
+		            if (this.readyState == 4 && this.status == 200) {
+		            	var result = this.responseText.toString();
+		            	console.log("result " + result.length);
+		                if( result.length == 6){
+		                	console.log("id");
+		                	 $('#idCheck').val("사용가능한 아이디입니다.");
+		                } else{
+		                
+		                	 $('#idCheck').val("사용불가능한 아이디입니다.");
+		                	 id.val('');
+		                }
+		            }
+		        };
+				xhttp.open("GET", "IdCheckForm.go?id=" + document.getElementById('id').value, true);
+				xhttp.send();
+			});
+		});
+	</script>
 </body>
 
 </html>
