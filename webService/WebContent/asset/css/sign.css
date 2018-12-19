@@ -89,7 +89,7 @@ label {
 
 div.signUpColor{
 /* 	color: #cccccc !important; */
-
+margin: 0 auto;
 }
 
 #my_container > form > div > div > div.row {
@@ -128,6 +128,7 @@ form .row .row {
 .signRow {
 /* 	margin-left: 0px !important; */
 /* 	margin-right: 0px !important; */
+margin: 0 auto !important;
 }
 
 @media ( min-width : 768px) {
