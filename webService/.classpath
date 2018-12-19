@@ -17,14 +17,14 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/oraclexe/app/oracle/product/11.2.0/server/jdbc/lib/ojdbc6_g.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Ara/Downloads/Desktop/TransCoord.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Ara/utils/gson-2.2.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Ara/utils/jsoup-1.11.3.jar"/>
 	<classpathentry kind="con" path="org.eclipse.m2e.MAVEN2_CLASSPATH_CONTAINER">
 		<attributes>
 			<attribute name="maven.pomderived" value="true"/>
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/gson-2.2.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/jsoup-1.11.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/user/Desktop/TransCoord.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
