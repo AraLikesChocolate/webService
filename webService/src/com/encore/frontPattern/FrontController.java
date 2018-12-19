@@ -48,9 +48,10 @@ public class FrontController extends HttpServlet {
 		switch (requestURI) {
 		// 1. sign
 		case "/user/sign":
+			if(sess.getAttribute("user") != null)
+				response.sendRedirect("../index.jsp");
 			controller = new LoginController();
 			if (method.equals("get")) {
-
 			} else {
 				map.put("id", request.getParameter("id"));
 				map.put("password", request.getParameter("password"));
@@ -64,7 +65,7 @@ public class FrontController extends HttpServlet {
 				map.put("id", (String) request.getParameter("id"));
 				// page=signFolderName+"userIdCheck.jsp";
 			} else {
-				System.out.println(sess.getAttribute("user"));
+				System.out.println("sess.user == null? " + (sess.getAttribute("user") == null));
 				map.put("id", ((UserVO) sess.getAttribute("user")).getId());
 				map.put("password", (String) request.getParameter("password"));
 			}
@@ -102,7 +103,7 @@ public class FrontController extends HttpServlet {
 		// 5.userDelete --회원탈퇴 처리
 		case "/user/userDelete":
 			controller = new UserDeleteController();
-			String userid = ((UserVO)sess.getAttribute("user")).getId();
+			String userid = ((UserVO) sess.getAttribute("user")).getId();
 			map.put("userid", userid);
 			page = signFolderName + "userResult.jsp";
 			break;
@@ -138,11 +139,12 @@ public class FrontController extends HttpServlet {
 		if (result != null) {
 			if (((String) result).equals("yes")) {
 				sess.setAttribute("user", map.get("user"));
-				response.sendRedirect("../index.jsp");
+				response.getWriter().println("true");
+//				response.sendRedirect("../index.jsp");
 				return;
 			} else {
 //				System.out.println("로그인에 실패했습니다...");
-				response.sendRedirect(signFolderName + "sign.go");
+				response.getWriter().println("false");
 				return;
 			}
 		}

@@ -11,9 +11,7 @@ $(document).ready(function () {
 });
 
 /* Click on the SUBMIT button */
-/*$(".submit input[type='submit']").click(function (e) {
-	e.preventDefault();
-
+$(".submit input[type='submit']").click(function (e) {
 	var buttonAnim = $(".morphButton");
 	buttonAnim.css({
 		'width': $(this).outerWidth(),
@@ -24,42 +22,90 @@ $(document).ready(function () {
 		'z-index': 999,
 		'overflow': 'hidden' });
 
-
 	var keepMeCentered = $(".submit input[type='submit']").offset().left + buttonAnim.width() / 2 - $(".morphButton").height() / 2;
 
+	var password = $('#password');
+	
+	var isTrue = false;
+	
+	var url = "sign.go?id=" + document.getElementById('id').value + "&password="
+	+ document.getElementById('password').value;
+	$(function (){
+		$.post(url, function(data, status) {
+			if (status == "success") {
+				console.log("111");
+				if (data.toString().length == 6)
+					isTrue = true;
+				else 
+					isTrue = false;
+				
+				check(isTrue, keepMeCentered);
+			}
+		});
+	}, false);
+	e.preventDefault();
+
+	
 	// if successful
-	if ($("#username").val() == "john@doe.com" && $("#password").val() == "test") {
+	/*if (isTrue == true) {
+		console.log(222);
 		var timeline = new TimelineMax();
 		timeline.to($(".morphButton"), 0, { "opacity": 1 }).
 		to($(this), 0, { "opacity": 0, "visibility": "hidden" }).
 		to($(".morphButton"), 0.5, { "width": $(".morphButton").height(), "left": keepMeCentered, ease: Back.easeInOut, onComplete: function () {
-				TweenMax.to($(".loading"), 0.3, { "scale": "1", "display": "inline-block", "opacity": 1, ease: Power4.easeInOut, onComplete: function () {
-						setTimeout(morphSuccess, 300);  Faking a little the loading process 
-					} });
+			TweenMax.to($(".loading"), 0.3, { "scale": "1", "display": "inline-block", "opacity": 1, ease: Power4.easeInOut, onComplete: function () {
+				setTimeout(morphSuccess, 200); 
 			} });
+		} });
 
+	} else {
+		console.log(222);
+				var timeline = new TimelineMax();
+				timeline.to($(".morphButton"), 0, { "opacity": 1 }).
+				to($(this), 0, { "opacity": 0, "visibility": "hidden" }).
+				to($(".morphButton"), 0.5, { "width": $(".morphButton").height(), "left": keepMeCentered, ease: Back.easeInOut, onComplete: function () {
+						TweenMax.to($(".loading"), 0.3, { "scale": "1", "display": "inline-block", "opacity": 1, ease: Power4.easeInOut, onComplete: function () {
+								setTimeout(morphFail, 200); 
+							} });
+					} });
+
+	}*/
+});
+
+function check(isTrue, keepMeCentered){
+	// if successful
+	if (isTrue == true) {
+		var timeline = new TimelineMax();
+		timeline.to($(".morphButton"), 0, { "opacity": 1 }).
+		to($(".submit input[type='submit']"), 0, { "opacity": 0, "visibility": "hidden" }).
+		to($(".morphButton"), 0.5, { "width": $(".morphButton").height(), "left": keepMeCentered, ease: Back.easeInOut, onComplete: function () {
+			TweenMax.to($(".loading"), 0.3, { "scale": "1", "display": "inline-block", "opacity": 1, ease: Power4.easeInOut, onComplete: function () {
+				setTimeout(morphSuccess, 300); 
+			} });
+		} });
+		
 	} else
 	{
-		var timeline = new TimelineMax();
-		timeline.to($(".morphButton"), 0, { "opacity": 1 }).
-		to($(this), 0, { "opacity": 0, "visibility": "hidden" }).
-		to($(".morphButton"), 0.5, { "width": $(".morphButton").height(), "left": keepMeCentered, ease: Back.easeInOut, onComplete: function () {
-				TweenMax.to($(".loading"), 0.3, { "scale": "1", "display": "inline-block", "opacity": 1, ease: Power4.easeInOut, onComplete: function () {
-						setTimeout(morphFail, 300);  Faking a little the loading process 
+		$("#btnOn").visible = true;
+				var timeline = new TimelineMax();
+				timeline.to($(".morphButton"), 0, { "opacity": 1 }).
+				to($(".submit input[type='submit']"), 0, { "opacity": 0, "visibility": "hidden" }).
+				to($(".morphButton"), 0.5, { "width": $(".morphButton").height(), "left": keepMeCentered, ease: Back.easeInOut, onComplete: function () {
+						TweenMax.to($(".loading"), 0.3, { "scale": "1", "display": "inline-block", "opacity": 1, ease: Power4.easeInOut, onComplete: function () {
+								setTimeout(morphFail, 300); 
+							} });
 					} });
-			} });
 
 	}
-});*/
-
+}
 function morphSuccess() {
 	TweenMax.to($(".intro2"), 1, { "opacity": 0 });
 	var elements = [$(".username"), $(".password"), $(".submit")];
 
 	var timeline = new TimelineMax();
 	timeline.to($(".loading"), 1.5, { "scale": "0", "opacity": "0", ease: Elastic.easeIn, onComplete: function () {$(".loading").css("display", "none");} }).
-	to($(".morphButton"), 0.5, { "backgroundColor": "#0f9d58", ease: Back.easeInOut }).
-	to($(".success"), 1, { "scale": "1", "opacity": "1", "display": "inline-block", ease: Elastic.easeOut }, "-=0.3").
+	to($(".morphButton"), 0.5, { "backgroundColor": "#ff6666", ease: Back.easeInOut }).
+	to($(".success"), 1, { "scale": "0", "opacity": "1", "display": "inline-block", ease: Elastic.easeOut }, "-=0.3").
 	staggerTo(elements, 0.5, { "scale": 0, "opacity": 0, ease: Back.easeIn, onComplete: function () {
 			var headerAnim = $(".morphHeader");
 			headerAnim.css({
@@ -75,7 +121,7 @@ function morphSuccess() {
 			TweenMax.set($(".header"), { "opacity": 0 });
 			TweenMax.to($(".morphHeader span"), 0.5, { "opacity": 0 });
 			TweenMax.to($(".morphHeader"), 0.5, { "padding": 0, "height": $(".wrapper").outerHeight() + "px", "line-height": $(".wrapper").outerHeight() - 150 + "px", onComplete: function () {
-					$(".morphHeader span").html("Welcome John!");
+					$(".morphHeader span").html("Welcome!");
 					TweenMax.to($(".morphHeader span"), 0.25, { "opacity": 1 });
 					TweenMax.to($(".success"), 0.5, { "opacity": 0, onComplete: function () {
 							$(".success").css("display", "none");
@@ -89,7 +135,10 @@ function morphSuccess() {
 						} });
 				} });
 		} }, 0.1);
+	
 
+		$(window).setTimeOut(location.href = "../index.jsp", 5000);
+	
 }
 
 function morphFail() {
@@ -99,7 +148,7 @@ function morphFail() {
 			TweenMax.to($(".failure"), 0.5, { "scale": "1", "opacity": "1", "display": "inline-block", ease: Elastic.easeOut }, "-=0.3");TweenMax.to([$(".wrapper"), $(".morphButton")], 0.1, { x: "+=10", yoyo: true, repeat: 5, ease: Power4.easeInOut });
 		} }).
 	to([$(".failure"), $(".morphButton")], 0.5, { "opacity": "0", delay: 1 }).
-	to($(".morphButton"), 0.3, { "width": $(".submit input[type='submit']").outerWidth(), "backgroundColor": "#1677bb", "left": "-1000px" }).
+	to($(".morphButton"), 0.3, { "width": $(".submit input[type='submit']").outerWidth(), "backgroundColor": "#ff6666", "left": "-1000px" }).
 	set([$(".success"), $(".failure")], { "display": "none" }).
 	to($(".submit input[type='submit']"), 0, { "opacity": 1, "visibility": "visible", onComplete: function () {
 			TweenMax.to($(".intro1"), 1, { "opacity": 0 });

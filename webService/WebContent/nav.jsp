@@ -43,8 +43,8 @@
 				</c:if>
 
 				<c:if test="${sessionScope.user != null}">
-					<div class="dropdown show">
-						<a class="btn btn-secondary dropdown-toggle"
+					<div class="dropdown show nav-item">
+						<a class="btn btn-secondary dropdown-toggle nav-link"
 							href="https://example.com" id="dropdownMenuLink"
 							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							마이페이지 </a>

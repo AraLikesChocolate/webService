@@ -21,8 +21,9 @@
 <body>
 	<jsp:include page="../nav.jsp"></jsp:include>
 	<div id="my_container container">
-			<form method="post" autocomplete="off" action="sign.go" id="signForm">
-				<div class="row signRow">
+<!-- 			<form method="post" autocomplete="off" action="sign.go" id="signForm"> -->
+			<form method="post" autocomplete="off" id="signForm">
+				<div class="row signRow info">
 					<div
 						class="wrapper large-5 columns large-centered small-7 small-centered">
 						<div class="row header">
@@ -39,13 +40,13 @@
 
 						<div class="row password">
 							<div class="large-9 columns large-centered">
-								<label for="psw"><i class="fa fa-lock"></i></label> <input
-									id="psw" type="password" name="password"
+								<label for="password"><i class="fa fa-lock"></i></label> <input
+									id="password" type="password" name="password"
 									placeholder="password" required autocomplete="off" />
 							</div>
 						</div>
 
-						<div class="row submit">
+						<div class="row submit" id="btnOn">
 							<div class="large-9 columns large-centered">
 								<input type="submit" value="SUBMIT">
 							</div>
@@ -53,6 +54,9 @@
 					</div>
 				</div>
 			</form>
+			<span class='morphButton'> <i class="fa fa-refresh fa-spin loading"></i>
+				<i class="fa fa-check success"></i> <i class="fa fa-times failure"></i>
+			</span> <span class="morphHeader"><span>SIGN IN</span></span>
 	</div>
 
 	<!-- sourceURL=pen.js -->
