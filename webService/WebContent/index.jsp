@@ -73,12 +73,13 @@
 	<section id="services">
 		<div class="container">
 				<div class="col-lg-12 text-center">
+<%-- 				<jsp:include page="service/daumMap.jsp"></jsp:include> --%>
 					<div class="map_wrap">
 						<div id="map"
 							style="width: 100%; height: 400px; position: relative; overflow: hidden;"></div>
-						<!-- 		<div class="hAddr"> -->
-						<!-- 			<span class="title">지도중심기준 행정동 주소정보</span> <span id="centerAddr"></span> -->
-						<!-- 		</div> -->
+								<div class="hAddr">
+									<span class="title">지도중심기준 행정동 주소정보</span> <span id="centerAddr"></span>
+								</div>
 					</div>
 					<form action="FrontController" class="daumMapForm">
 						<input type="text" id="start" name="start" readonly="readonly">
