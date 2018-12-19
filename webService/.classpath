@@ -23,8 +23,6 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/gson-2.2.2.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/jsoup-1.11.3.jar"/>
-	<classpathentry kind="lib" path="C:/Users/user/Desktop/TransCoord.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Ara/Downloads/TransCoord.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
