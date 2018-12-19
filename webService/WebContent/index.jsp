@@ -29,7 +29,13 @@
 <link
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
 	rel="stylesheet">
-
+<style type="text/css">
+section#services div.container{
+max-width: 100% !important;
+padding: 0 !important;
+margin: 0 auto;
+}
+</style>
 </head>
 <body id="page-top">
 	<jsp:include page="nav.jsp"></jsp:include>
@@ -72,13 +78,13 @@
 	</section>
 
 	<section id="services">
-<!-- 		<div class="container"> -->
+		<div class="container">
 			<div class="row">
 				<div class="col-lg-12 text-center">
 					<jsp:include page="service/daumMap.jsp"></jsp:include>
 				</div>
 			</div>
-<!-- 		</div> -->
+		</div>
 	</section>
 
 <%-- 	<section class="p-0" id="portfolio">
