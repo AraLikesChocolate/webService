@@ -65,7 +65,7 @@
 		</table>
 
 		<br> <input type="button" value="취소" onclick="redirect()">
-		<input type="submit" id="exit" value="탈퇴" disabled="disable	d" onsubmit="return true" />
+		<input type="submit" id="exit" value="탈퇴" disabled="disabled" onsubmit="return true" />
 	</form>
 
 
