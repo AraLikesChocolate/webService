@@ -35,6 +35,43 @@ max-width: 100% !important;
 padding: 0 !important;
 margin: 0 auto;
 }
+
+
+
+@media ( min-width : 576px) {
+	section#services div.container {
+	width: 100% !important;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	}
+}
+
+@media ( min-width : 768px) {
+	section#services div.container {
+	width: 100% !important;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	}
+}
+}
+
+@media ( min-width : 992px) {
+	section#services div.container {
+	width: 100% !important;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	}
+}
+}
+
+@media ( min-width : 1200px) {
+	section#services div.container {
+	width: 100% !important;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+	}
+}
+
 </style>
 </head>
 <body id="page-top">
