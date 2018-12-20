@@ -30,7 +30,7 @@ public class FrontController extends HttpServlet {
 		// TODO Auto-generated method stub
 		String path = getServletContext().getRealPath("WEB_INF");
 		try {
-//			ChromeDriverUtil.naver(request, response, path);
+			ChromeDriverUtil.naver(request, response, path);
 //			ChromeDriverUtil.naverDetail(request, response, path);
 //			
 //			String[] dlist = ChromeDriverUtil.daum(path);
@@ -38,7 +38,7 @@ public class FrontController extends HttpServlet {
 //			System.out.println(Arrays.toString(dlist));
 //			RequestDispatcher view = request.getRequestDispatcher("result.jsp");
 //			view.forward(request, response);
-			ChromeDriverUtil.daumWithJsoup(request.getParameter("start").split(","), request.getParameter("arrive").split(","), path);
+//			ChromeDriverUtil.daumWithJsoup(request.getParameter("start").split(","), request.getParameter("arrive").split(","), path);
 //			ChromeDriverUtil.daumWithJsoup();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

@@ -27,9 +27,11 @@ import kr.hyosang.coordinate.TransCoord;
 public class ChromeDriverUtil {
 	public static void naver(HttpServletRequest request, HttpServletResponse response, String path) throws InterruptedException {
 
-		System.setProperty("webdriver.chrome.driver", path + "\\chromedriver.exe"); // 크롬
-		// 경로설정
+//		System.setProperty("webdriver.chrome.driver", "lib/chromedriver"); // 크롬
+		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Ara\\utils\\chromedriver_win32\\chromedriver.exe"); // 크롬
 		
+		// 경로설정
+//		WebDriverManager.chromedriver().setup();
 		ChromeOptions options = new ChromeOptions();
 //		options.addArguments("headless");
 //		options.addArguments("disable-gpu");
@@ -37,19 +39,21 @@ public class ChromeDriverUtil {
 		WebDriver driver = new ChromeDriver(options);
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
-		String[] starts = request.getParameter("start").split(",");
-		String[] arrives = request.getParameter("arrive").split(",");
+//		String[] starts = request.getParameter("start").split(",");
+//		String[] arrives = request.getParameter("arrive").split(",");
 
 		driver.get("https://map.naver.com/");
 		driver.findElement(By.xpath("//*[@id=\"nav\"]/ul/li[2]/a")).click();
 		driver.findElement(By.xpath("//*[@id=\"panel\"]/div[2]/div[1]/div[1]/div[1]/ul/li[2]/a")).click();
 		List<WebElement> list = driver.findElements(By.cssSelector(".pf_enter .pf_ii>.input_act"));
-		list.get(0).sendKeys(starts[0]);
+//		list.get(0).sendKeys(starts[0]);
+		list.get(0).sendKeys("엔코아");
 		list.get(0).sendKeys(Keys.ENTER);
 
 		Thread.sleep(1000);
 
-		list.get(1).sendKeys(arrives[0]);
+//		list.get(1).sendKeys(arrives[0]);
+		list.get(1).sendKeys("교대역");
 		list.get(1).sendKeys(Keys.ENTER);
 
 		Thread.sleep(1000);
