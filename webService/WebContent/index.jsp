@@ -49,18 +49,15 @@
 				<div class="col-lg-8 mx-auto text-center">
 					<h2 class="section-heading text-white">오작교 서비스는..</h2>
 					<hr class="light my-4">
-					<pre class="text-faded mb-4 introtext">
-'오'늘의 '작'은 '교'감을 이루어주는 까마귀와 까치의 역할을 합니다.
-
-칠석날 견우와 직녀의 두 별을 만나게 하기 위하여
-까마귀와 까치가 만드는 다리를 의미하는 오작교에 대해 들어보셨나요?
-
-첫인상을 좌우하는 첫 데이트 장소 또는
-사랑하는 사람과의 특별한 추억을 '저장~'해줄 그 곳을 검색해보세요!</pre>
-
-<br><br><br>
-					<a class="btn btn-light btn-xl js-scroll-trigger" href="#services">서비스로
-						이동</a>
+					<div class="text-faded mb-4 introtext">
+						<br> '오'늘의 '작'은 '교'감을 이루어주는 까마귀와 까치의 역할을 합니다.<br> <br>
+						칠석날 견우와 직녀의 두 별을 만나게 하기 위하여<br> 까마귀와 까치가 만드는 다리를 의미하는 오작교에 대해
+						들어보셨나요?<br> <br> 첫인상을 좌우하는 첫 데이트 장소 또는<br> 사랑하는
+						사람과의 특별한 추억을 '저장~'해줄 그 곳을 검색해보세요!
+					</div>
+					<br>
+					<br> <a class="btn btn-light btn-xl js-scroll-trigger"
+						href="#services">서비스로 이동</a>
 				</div>
 			</div>
 		</div>

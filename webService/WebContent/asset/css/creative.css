@@ -67,7 +67,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 section {
-	padding: 9.4rem 0;
+	padding: 5rem 0;
 	/*   border: 2px solid red; */
 }
 
@@ -207,7 +207,7 @@ img::-moz-selection {
 		color: #ff6666;
 	}
 	section {
-		padding: 9.4rem 0;
+		padding: 6rem 0;
 		/*   border: 2px solid red; */
 	}
 	header.masthead {

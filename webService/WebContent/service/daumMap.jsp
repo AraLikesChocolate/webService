@@ -10,16 +10,11 @@
 	<!-- 		</div> -->
 </div>
 <form action="FrontController" class="daumMapForm"
-	style="transform: translateY(70%); padding-left: 15px; padding-right: 15px;">
-	<div class="row" style="margin: 0 auto;">
-		<div class="col-5">
-			<input type="text" id="start" name="start" readonly="readonly">
-		</div>
-		<div class="col-5">
-			<input type="text" id="arrive" name="arrive" readonly="readonly">
-		</div>
-		<div class="col-2">
+	style="transform: translateY(20%); padding-left: 15px; padding-right: 15px;">
+	<div class="row btnTwo2" style="margin: 0 auto;">
+			<input type="text" id="start" name="start" readonly="readonly">&nbsp;
+			<input type="text" id="arrive" name="arrive" readonly="readonly">&nbsp;&nbsp;&nbsp;&nbsp;
 			<input type="submit" value="검색">
-		</div>
+		
 	</div>
 </form>
