@@ -28,17 +28,17 @@ public class FrontController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-
+		String path = getServletContext().getRealPath("WEB_INF");
 		try {
-//			ChromeDriverUtil.naver(request, response);
-//			ChromeDriverUtil.naverDetail(request, response);
+			ChromeDriverUtil.naver(request, response, path);
+//			ChromeDriverUtil.naverDetail(request, response, path);
 //			
-//			String[] dlist = ChromeDriverUtil.daum();
+//			String[] dlist = ChromeDriverUtil.daum(path);
 //			request.setAttribute("dlist", dlist);
 //			System.out.println(Arrays.toString(dlist));
 //			RequestDispatcher view = request.getRequestDispatcher("result.jsp");
 //			view.forward(request, response);
-			ChromeDriverUtil.daumWithJsoup(request.getParameter("start").split(","), request.getParameter("arrive").split(","));
+			ChromeDriverUtil.daumWithJsoup(request.getParameter("start").split(","), request.getParameter("arrive").split(","), path);
 //			ChromeDriverUtil.daumWithJsoup();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

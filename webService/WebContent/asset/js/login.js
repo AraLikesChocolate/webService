@@ -44,32 +44,6 @@ $(".submit input[type='submit']").click(function (e) {
 		});
 	}, false);
 	e.preventDefault();
-
-	
-	// if successful
-	/*if (isTrue == true) {
-		console.log(222);
-		var timeline = new TimelineMax();
-		timeline.to($(".morphButton"), 0, { "opacity": 1 }).
-		to($(this), 0, { "opacity": 0, "visibility": "hidden" }).
-		to($(".morphButton"), 0.5, { "width": $(".morphButton").height(), "left": keepMeCentered, ease: Back.easeInOut, onComplete: function () {
-			TweenMax.to($(".loading"), 0.3, { "scale": "1", "display": "inline-block", "opacity": 1, ease: Power4.easeInOut, onComplete: function () {
-				setTimeout(morphSuccess, 200); 
-			} });
-		} });
-
-	} else {
-		console.log(222);
-				var timeline = new TimelineMax();
-				timeline.to($(".morphButton"), 0, { "opacity": 1 }).
-				to($(this), 0, { "opacity": 0, "visibility": "hidden" }).
-				to($(".morphButton"), 0.5, { "width": $(".morphButton").height(), "left": keepMeCentered, ease: Back.easeInOut, onComplete: function () {
-						TweenMax.to($(".loading"), 0.3, { "scale": "1", "display": "inline-block", "opacity": 1, ease: Power4.easeInOut, onComplete: function () {
-								setTimeout(morphFail, 200); 
-							} });
-					} });
-
-	}*/
 });
 
 function check(isTrue, keepMeCentered){

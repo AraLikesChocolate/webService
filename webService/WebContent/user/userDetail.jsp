@@ -120,10 +120,10 @@
 					<div class="row password">
 						<div class="large-9 columns large-centered"
 							style="padding-left: 5%;">
-							<label for="gender"></label>성별:
+							<label for="gender"></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;성별:
 							<div style="display: inline; margin-left: 20%">
-								<input id="gender" type="radio" name="gender" value="M" checked>
-								남<input id="gender" type="radio" name="gender" value="F"
+								<input class="gender" type="radio" name="gender" value="M" checked>
+								남<input class="gender" type="radio" name="gender" value="F"
 									style="margin-left: 20%"> 여
 							</div>
 						</div>
@@ -140,23 +140,18 @@
 					<div class="row password">
 						<div class="large-9 columns large-centered"
 							style="padding-left: 5%;">
-							<label for="userinfo"><i class="fa "></i></label> 내 정보 저장: <input
+							<label for="userinfo"><i class="fa "></i></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내 정보 저장: <input
 								type="checkbox" placeholder="내 정보 기억하기" 
 								autocomplete="off" style="margin-left: 8%" />
 						</div>
 					</div>
 					<!-- 회원가입 -->
 					<div class="row submit">
-						<div class="large-9 columns large-centered">
+						<div class="large-9 columns large-centered btnTwo">
+							<input type="reset" value="CANCEL">
 							<input type="submit" value="SAVE">
 						</div>
-					</div>
-					<!-- 취소 -->
-					<div class="row submit">
-						<div class="large-9 columns large-centered">
-							<input type="reset" value="CANCEL">
-						</div>
-					</div>
+					</div>	
 				</div>
 			</div>
 		</form>
@@ -180,7 +175,8 @@
 	<script
 		src='//static.codepen.io/assets/common/stopExecutionOnTimeout-41c52890748cd7143004e05d3c5f786c66b19939c4500ce446314d1748483e13.js'></script>
 	<!-- Custom scripts for this template -->
-	<script src="${path}/asset/js/login.js"></script>
+	<script src="${path}/asset/js/loginPop.js"></script>
+	
 </body>
 
 </html>

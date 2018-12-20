@@ -7,6 +7,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
+<link href="${path}/asset/css/creative.css" rel="stylesheet">
+<link href="${path}/asset/css/sign.css" rel="stylesheet">
+
+<!-- source codepen.io -->
+<link
+	href="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.css"
+	rel="stylesheet">
+<link
+	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+	rel="stylesheet">
 <script src="${path}/asset/vendor/jquery/jquery.min.js"></script>
 <script type="text/javascript">
 	function redirect() {
@@ -33,7 +43,7 @@
 						$('#pwCheck').val("회원탈퇴가 가능합니다.");
 						$("#exit").prop("disabled", false);
 					} else {
-						$('#pwCheck').val("잘못된 비밀번호입니다.");
+						$('#pwCheck').val("비밀번호를 잘못 입력하셨습니다.");
 						password.val('');
 						$("#exit").prop("disabled", true);
 					}
@@ -45,30 +55,48 @@
 
 </head>
 <body>
+	<jsp:include page="../nav.jsp"></jsp:include>
+	<div id="my_container container">
+		<form name="userDelete" method="post" action="userDelete.go"
+			onsubmit="return checkValue()">
+			<div class="row signRow info">
+				<div
+					class="wrapper large-5 columns large-centered small-7 small-centered">
+					<div class="row header">
+						<div class="large-12 columns">내 정보</div>
+					</div>
+					<div class="row username">
+						<div class="large-9 columns large-centered">
+							<label for="password"><i class="fa fa-lock"></i></label> <input
+								id="password" type="password" name="password"
+								placeholder="비밀번호를 입력하세요..." required autocomplete="off" />
+						</div>
+					</div>
+					<div class="row password">
+						<div class="large-9 columns large-centered">
+							<input type="text" id="pwCheck" maxlength="50"
+								readonly="readonly" placeholder="비밀번호 확인 결과">
+						</div>
+					</div>
+					<div class="row submit" id="btnOn">
+						<div class="large-9 columns large-centered btnTwo">
+							<input type="button" value="취소" onclick="redirect()"> <input
+								type="submit" id="exit" value="탈퇴" disabled="disabled"
+								onsubmit="return true" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</form>
+	</div>
+	<!-- sourceURL=pen.js -->
+	<script
+		src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js'></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	<script
+		src='//static.codepen.io/assets/common/stopExecutionOnTimeout-41c52890748cd7143004e05d3c5f786c66b19939c4500ce446314d1748483e13.js'></script>
+	<!-- Custom scripts for this template -->
+	<script src="${path}/asset/js/loginPop.js"></script>
 
-	<br>
-	<br>
-	<b><font size="6" color="gray">내 정보</font></b>
-	<br>
-	<br>
-	<br>
-	<form name="userDelete" method="post" action="userDelete.go"
-		onsubmit="return checkValue()">
-
-		<table>
-			<tr>
-				<td>비밀번호</td>
-				<td><input type="password" id="password" name="password"
-					maxlength="50"></td>
-				<td><input type="text" id="pwCheck" maxlength="50"></td>
-			</tr>
-		</table>
-
-		<br> <input type="button" value="취소" onclick="redirect()">
-		<input type="submit" id="exit" value="탈퇴" disabled="disabled" onsubmit="return true" />
-	</form>
-
-
-	<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> -->
 </body>
 </html>

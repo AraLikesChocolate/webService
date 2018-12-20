@@ -10,13 +10,11 @@
 <link href="${path}/asset/vendor/fontawesome-free/css/all.min.css"
 	rel="stylesheet" type="text/css">
 <link href="${path}/asset/css/creative.css" rel="stylesheet">
+<link href="${path}/asset/css/loader.css" rel="stylesheet">
 
 <!-- Plugin CSS -->
 <link href="${path}/asset/vendor/magnific-popup/magnific-popup.css"
 	rel="stylesheet">
-
-<script src="${path}/asset/js/modernizr.js"></script>
-<script src="${path}/asset/js/pace.min.js"></script>
 
 <!-- Navigation -->
 <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -43,19 +41,21 @@
 				</c:if>
 
 				<c:if test="${sessionScope.user != null}">
-					<div class="dropdown show nav-item">
-						<a class="btn btn-secondary dropdown-toggle nav-link"
-							href="https://example.com" id="dropdownMenuLink"
-							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							마이페이지 </a>
+					<li class="nav-item">
+						<div class="dropdown show">
+							<a class="btn btn-secondary dropdown-toggle nav-link" id="dropdownMenuLink"
+								data-toggle="dropdown" aria-haspopup="true"
+								aria-expanded="false"> 마이페이지 </a>
 
-						<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-							<a class="dropdown-item" href="#">내 위치 추가</a> 
-							<a class="dropdown-item" href="#">즐겨찾기</a>
-							<a class="dropdown-item" href="${path}/user/userUpdate.go">회원정보 수정</a> 
-							<a class="dropdown-item" href="${path}/user/userDelete.jsp">회원 탈퇴</a> 
+							<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+								<a class="dropdown-item" href="#">내 위치 추가</a> <a
+									class="dropdown-item" href="#">즐겨찾기</a> <a
+									class="dropdown-item" href="${path}/user/userUpdate.go">회원정보
+									수정</a> <a class="dropdown-item" href="${path}/user/userDelete.jsp">회원
+									탈퇴</a>
+							</div>
 						</div>
-					</div>
+					</li>
 					<li class="nav-item"><a class="nav-link js-scroll-trigger"
 						href="${path}/user/signOut.go">${sessionScope.user.name}님 로그아웃</a></li>
 				</c:if>
@@ -65,16 +65,19 @@
 	</div>
 </nav>
 <div id="preloader">
-		<div id="loader">
-			<div class="line-scale-pulse-out">
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-				<div></div>
-			</div>
+	<div id="loader">
+		<div class="line-scale-pulse-out">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
 		</div>
 	</div>
-	<script src="${path}/asset/js/jquery-3.2.1.min.js"></script>
-	<script src="${path}/asset/js/plugins.js"></script>
-	<script src="${path}/asset/js/load.js"></script>
+</div>
+
+<script src="${path}/asset/js/jquery-3.2.1.min.js"></script>
+<script src="${path}/asset/js/loader.js"></script>
+<script src="${path}/asset/js/modernizr.js"></script>
+<script src="${path}/asset/js/pace.min.js"></script>
+<script src="${path}/asset/js/plugins.js"></script>

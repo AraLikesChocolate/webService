@@ -9,6 +9,9 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>시작 페이지</title>
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
+<link href="${path}/asset/css/creative.css" rel="stylesheet">
+<link href="${path}/asset/css/sign.css" rel="stylesheet">
+
 <!-- Bootstrap core CSS -->
 <link href="${path}/asset/vendor/bootstrap/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -16,12 +19,7 @@
 <!-- Custom fonts for this template -->
 <link href="${path}/asset/vendor/fontawesome-free/css/all.min.css"
 	rel="stylesheet" type="text/css">
-<link href="${path}/asset/css/creative.css" rel="stylesheet">
 
-<!-- Plugin CSS -->
-<link href="${path}/asset/vendor/magnific-popup/magnific-popup.css"
-	rel="stylesheet">
-<link href="${path}/asset/css/sign.css" rel="stylesheet">
 <!-- source codepen.io -->
 <link
 	href="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.css"
@@ -30,7 +28,9 @@
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
 	rel="stylesheet">
 
-
+<!-- Plugin CSS -->
+<link href="${path}/asset/vendor/magnific-popup/magnific-popup.css"
+	rel="stylesheet">
 </head>
 <body id="page-top">
 
@@ -57,8 +57,7 @@
 								<input id="id" type="text" name="id" placeholder="아이디를 입력하세요."
 									required autocomplete="off" />
 							</c:if>
-							<!-- 							<input type="button" value="ID check" onclick="openIdChk()"> -->
-							<input type="text" id="idCheck" placeholder="아이디 중복체크"> <input
+							<input type="text" id="idCheck" placeholder="아이디 중복체크" readonly="readonly"> <input
 								type="hidden" name="idDuplication" value="idUncheck">
 						</div>
 					</div>
@@ -98,10 +97,10 @@
 					<div class="row password">
 						<div class="large-9 columns large-centered"
 							style="padding-left: 5%;">
-							<label for="gender"></label>성별:
+							<label for="gender"></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;성별:
 							<div style="display: inline; margin-left: 20%">
-								<input id="gender" type="radio" name="gender" value="M" checked>
-								남<input id="gender" type="radio" name="gender" value="F"
+								<input class="gender" type="radio" name="gender" value="M" checked>
+								남<input class="gender" type="radio" name="gender" value="F"
 									style="margin-left: 20%"> 여
 							</div>
 						</div>
@@ -118,24 +117,21 @@
 					<div class="row password">
 						<div class="large-9 columns large-centered"
 							style="padding-left: 5%;">
-							<label for="userinfo"><i class="fa "></i></label> 내 정보 저장: <input
+							<label for="userinfo"><i class="fa "></i></label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내 정보 저장: &nbsp;&nbsp;&nbsp;<input
 								id="userinfo" type="checkbox" name="userinfo"
 								placeholder="내 정보 기억하기" autocomplete="off"
 								style="margin-left: 8%" />
 						</div>
 					</div>
 					<!-- 회원가입 -->
+					<br>
 					<div class="row submit">
-						<div class="large-9 columns large-centered">
-							<input type="submit" value="SUBMIT">
+						<div class="large-9 columns large-centered btnTwo">
+							<input type="reset" value="취소">
+							<input type="submit" value="가입">
 						</div>
 					</div>
-					<!-- 취소 -->
-					<div class="row submit">
-						<div class="large-9 columns large-centered">
-							<input type="reset" value="CANCEL">
-						</div>
-					</div>
+					<br>
 				</div>
 			</div>
 		</form>
@@ -152,6 +148,7 @@
 
 	<!-- Custom scripts for this template -->
 	<script src="${path}/asset/js/creative.min.js"></script>
+	
 	<!-- sourceURL=pen.js -->
 	<script
 		src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js'></script>
@@ -159,7 +156,9 @@
 	<script
 		src='//static.codepen.io/assets/common/stopExecutionOnTimeout-41c52890748cd7143004e05d3c5f786c66b19939c4500ce446314d1748483e13.js'></script>
 	<!-- Custom scripts for this template -->
-	<script src="${path}/asset/js/login.js"></script>
+	<script src="${path}/asset/js/loginPop.js"></script>
+	
+	<!-- Custom scripts for this template -->
 	<script type="text/javascript">
 		// 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
 		function _repeatValue() {

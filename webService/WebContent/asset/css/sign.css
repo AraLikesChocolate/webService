@@ -24,7 +24,8 @@ input[type="password"],
 input[type="checkbox"],
 input[type="date"],
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+input[type="button"] {
   -webkit-border-top-left-radius: 360px;
   -moz-border-top-left-radius: 360px;
   -ms-border-top-left-radius: 360px;
@@ -52,9 +53,13 @@ input[type="password"] {
   padding-left: 4.3em;
   font-family:'Titillium Web', 'Do Hyeon', 'Nanum Myeongjo' !important;
 }
-
+input:disabled, input[readonly], textarea:disabled, textarea[readonly]{
+	background-color: #e6e6e6a1 !important;
+}
 input[type="reset"],
-input[type="submit"] {
+input[type="submit"],
+input[type="button"] {
+/* 	font-family: 'Do Hyeon', 'Titillium Web',"Open Sans" !important; */
   width: 100%;
   background-color: #ff6666;
   color: white;
@@ -75,8 +80,10 @@ input[type="submit"] {
 }
 
 input[type="reset"]:hover,
-input[type="submit"]:hover {
-  background-color: #D2D7D3;
+input[type="submit"]:hover,
+input[type="button"]:hover {
+/*   background-color: #D2D7D3; */
+background-color: #e6e6e6;
 }
 
 label {
@@ -107,7 +114,7 @@ form#signForm {
   top: 50% !important;
 /*   -webkit-transform: translateY(-50%); */
 /*   -ms-transform: translateY(-50%); */
-  transform: translateY(35%) !important;
+  transform: translateY(40%) !important;
 }
 
 form {
@@ -118,9 +125,6 @@ form {
   transform: translateY(45%);
 }
 
-form.daumMapForm{
-	top: 0% !important;
-}
 form .row .row {
   margin: 0 -0.9375rem;
 }
@@ -263,4 +267,28 @@ p.intro2 {
 
 .columns {
   position: relative;
+  padding-left: 0.94rem !important;
+  padding-right: 0.94rem !important;
+}
+
+
+.userResult{
+	transform: translateY(60%) !important;
+	text-align: center;
+}
+
+.userResult div div div span{
+	font-size: 1.2rem;
+}
+
+.btnTwo{
+	text-align: center;
+}
+
+.btnTwo input:first-child{
+	margin-right: 5%;
+}
+
+.btnTwo input[type="button"], .btnTwo input[type="submit"], .btnTwo input[type="reset"]{
+	width: 40%;
 }
