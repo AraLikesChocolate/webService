@@ -48,9 +48,9 @@
 								aria-expanded="false"> 마이페이지 </a>
 
 							<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-								<a class="dropdown-item" href="#">내 위치 추가</a> <a
+								<a class="dropdown-item" href="${path}/user/addressInsert.go">내 위치 추가</a> <a
 									class="dropdown-item" href="#">즐겨찾기</a> <a
-									class="dropdown-item" href="${path}/user/userUpdate.go">회원정보
+									class="dropdown-item" href="${path}/user/signUp.jsp">회원정보
 									수정</a> <a class="dropdown-item" href="${path}/user/userDelete.jsp">회원
 									탈퇴</a>
 							</div>
