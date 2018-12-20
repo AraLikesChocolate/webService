@@ -26,7 +26,7 @@
 		<div
 			class="wrapper large-5 columns large-centered small-7 small-centered">
 			<div class="row header">
-				<div class="large-12 columns">작업 결과...</div>
+				<div class="large-12 columns">요청된 작업을 수행중입니다...</div>
 			</div>
 			<div class="row">
 				<div class="large-12 columns">

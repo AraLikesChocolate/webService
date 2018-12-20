@@ -214,5 +214,65 @@ public class UserDAO {
         }
 
 	}
+
+	public static List<AddressVO> selectAllAdd() {
+		Connection conn = null;
+		Statement st = null;
+		ResultSet rs = null;
+		String sql = "select * from address order by 1";
+
+		List<AddressVO> addlist = new ArrayList<>();
+		
+		
+		try {
+			conn = OracleDBUtil.getConnection();
+			st = conn.createStatement();
+			rs = st.executeQuery(sql);
+			while(rs.next()) 
+				addlist.add(makeAdd(rs));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			OracleDBUtil.dbDisconnect(conn, rs, st);
+		}
+		return addlist;
 	
+ 	}
+
+	private static AddressVO makeAdd(ResultSet rs) throws SQLException {
+		AddressVO useradd = new AddressVO();
+		useradd.setId(rs.getString("id"));
+		useradd.setAddNo(rs.getInt("addNo"));
+		useradd.setAddress(rs.getString("address"));
+		useradd.setIsMain(rs.getString("isMain"));
+		return useradd;
+	}
+
+	public static int insertUser(AddressVO useradd) {
+		int count = 0;
+		Connection conn = null;
+		PreparedStatement st = null;
+		ResultSet rs = null;
+		try {
+			conn = OracleDBUtil.getConnection();
+			st = conn.prepareStatement("insert into address values(?,?,?,?)");
+			st.setString(1, useradd.getId());
+			st.setInt(2, useradd.getAddNo());
+			st.setString(3, useradd.getAddress());
+			st.setString(4, useradd.getIsMain());
+			count = st.executeUpdate();
+			System.out.println(count);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			OracleDBUtil.dbDisconnect(conn, rs, st);
+		}
+		
+		return count;
+	
+	}
+
+
 }

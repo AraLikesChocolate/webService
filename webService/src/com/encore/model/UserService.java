@@ -32,5 +32,15 @@ public class UserService {
 		return UserDAO.checkUserPw(id,password);
 	}
 
+	public List<AddressVO> selectAllAdd() {
+		// TODO Auto-generated method stub
+		return UserDAO.selectAllAdd();
+	}
+
+	public int insertAdd(AddressVO useradd) {
+		// TODO Auto-generated method stub
+		return UserDAO.insertUser(useradd);
+	}
+
 	
 }
