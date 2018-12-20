@@ -262,7 +262,7 @@ header.masthead p {
 
 .btn-loc {
 	position: relative;
-	top: 170%;
+	top: 180%;
 	padding: 13px 32px !important;
 }
 
@@ -279,7 +279,7 @@ header.masthead p {
 	}
 	.btn-loc {
 		position: relative;
-		top: 370%;
+		top: 475%;
 	}
 	#portfolio {
 		padding: 6rem 0 !important;
