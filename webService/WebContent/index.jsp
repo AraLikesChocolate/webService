@@ -76,9 +76,10 @@
 				<div class="col-lg-8 mx-auto text-center">
 					<h2 class="section-heading">Let's Get In Touch!</h2>
 					<hr class="my-4">
-					<p class="mb-5">Ready to start your next project with us?
-						That's great! Give us a call or send us an email and we will get
-						back to you as soon as possible!</p>
+					<div class="mb-5">
+					<br>오작교 서비스 이용자 분들에게 깊은 감사의 말씀을 드리며, <br>
+					서비스 이용 중 불편하신 점, 궁금하신 점들을 해결해 드리겠습니다. <br>
+					</div>
 				</div>
 			</div>
 			<div class="row">

@@ -63,13 +63,13 @@
 				<div
 					class="wrapper large-5 columns large-centered small-7 small-centered">
 					<div class="row header">
-						<div class="large-12 columns">내 정보</div>
+						<div class="large-12 columns">회원 탈퇴 하시겠습니까?</div>
 					</div>
 					<div class="row username">
 						<div class="large-9 columns large-centered">
 							<label for="password"><i class="fa fa-lock"></i></label> <input
 								id="password" type="password" name="password"
-								placeholder="비밀번호를 입력하세요..." required autocomplete="off" />
+								placeholder="비밀번호를 확인해주세요..." required autocomplete="off" />
 						</div>
 					</div>
 					<div class="row password">
