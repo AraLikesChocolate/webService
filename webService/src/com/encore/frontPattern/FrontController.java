@@ -132,6 +132,8 @@ public class FrontController extends HttpServlet {
 			} else
 				map.put("userResult", "회원 탈퇴가 이루어지지 않았습니다.");
 			page = signFolderName + "userResult.jsp";
+		} else if (requestURI.equals("/user/userUpdate") && method.equals("post")){
+			sess.setAttribute("user", map.get("user"));
 		}
 
 		// 로그인 인증되면 index.jsp로 이동, 인증되지 않으면 sign.jsp로 이동 --> redirect 해야함
