@@ -107,7 +107,7 @@
 		src="${path}/asset/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
 	<!-- Custom scripts for this template -->
-	<script src="${path}/asset/js/creative.min.js"></script>
+	<script src="${path}/asset/js/creative.js"></script>
 	<!-- Custom scripts for map -->
 	<script type="text/javascript"
 		src="//dapi.kakao.com/v2/maps/sdk.js?appkey=286f378553f9ff596057e7f9828eee37&libraries=services"></script>

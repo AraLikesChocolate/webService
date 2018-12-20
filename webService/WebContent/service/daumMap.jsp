@@ -12,7 +12,7 @@
 <form action="FrontController" class="daumMapForm"
 	style="transform: translateY(20%); padding-left: 15px; padding-right: 15px;">
 	<div class="row btnTwo2" style="margin: 0 auto;">
-			<input type="text" id="start" name="start" readonly="readonly">&nbsp;
+			<input type="text" id="start" name="start" readonly="readonly">
 			<input type="text" id="arrive" name="arrive" readonly="readonly">&nbsp;&nbsp;&nbsp;&nbsp;
 			<input type="submit" value="검색">
 		
