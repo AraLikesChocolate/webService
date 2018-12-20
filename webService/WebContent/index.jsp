@@ -47,7 +47,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-8 mx-auto text-center">
-					<h2 class="section-heading text-white">오작교 서비스는..</h2>
+					<h2 class="section-heading text-white titletext">오작교 서비스는..</h2>
 					<hr class="light my-4">
 					<div class="text-faded mb-4 introtext">
 						<br> '오'늘의 '작'은 '교'감을 이루어주는 까마귀와 까치의 역할을 합니다.<br> <br>

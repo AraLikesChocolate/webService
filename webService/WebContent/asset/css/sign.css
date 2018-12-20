@@ -65,7 +65,7 @@ input:disabled, input[readonly], textarea:disabled, textarea[readonly] {
 input[type="reset"], input[type="submit"], input[type="button"] {
 	/* 	font-family: 'Do Hyeon', 'Titillium Web',"Open Sans" !important; */
 	width: 100%;
-	background-color: #ff6666;
+	background-color: #64b39a;
 	color: white;
 	border: 0;
 	padding: 8px;
@@ -116,7 +116,7 @@ form#signForm {
 	top: 50% !important;
 	/*   -webkit-transform: translateY(-50%); */
 	/*   -ms-transform: translateY(-50%); */
-	transform: translateY(40%) !important;
+	transform: translateY(55%) !important;
 }
 
 form {
@@ -207,7 +207,7 @@ p.intro2 {
 	border-bottom-right-radius: 0;
 	font-size: 1.7em;
 	/*   background-image: url("http://www.migloo.be/labs/lab1/img/backgroundBox.png"); */
-	background-color: #ff6666;
+	background-color: #64b39a;
 	padding: 2em;
 	color: white;
 }
@@ -243,7 +243,7 @@ p.intro2 {
 .morphButton, .morphHeader {
 	padding-top: 1px;
 	opacity: 0;
-	background-color: #ff6666;
+	background-color: #64b39a;
 	text-align: center;
 }
 

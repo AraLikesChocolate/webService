@@ -54,8 +54,8 @@
 	}
 
 	// 취소 버튼 클릭시 로그인 화면으로 이동
-	function goLoginForm() {
-		location.href = "login.jsp";
+	function redirect() {
+		window.location.href = '${path}/index.jsp';
 	}
 </script>
 
@@ -148,7 +148,7 @@
 					<!-- 회원가입 -->
 					<div class="row submit">
 						<div class="large-9 columns large-centered btnTwo">
-							<input type="reset" value="CANCEL">
+							<input type="button" value="CANCEL" onclick="redirect()">
 							<input type="submit" value="SAVE">
 						</div>
 					</div>	

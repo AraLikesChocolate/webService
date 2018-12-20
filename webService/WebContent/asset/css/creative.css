@@ -28,7 +28,7 @@ body {
 hr {
 	max-width: 50px;
 	border-width: 3px;
-	border-color: #ff6666;
+	border-color: #64b39a;
 }
 
 hr.light {
@@ -36,13 +36,13 @@ hr.light {
 }
 
 a {
-	color: #ff6666;
+	color: #64b39a;
 	-webkit-transition: all 0.2s;
 	transition: all 0.2s;
 }
 
 a:hover {
-	color: #ff6666;
+	color: #64b39a;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -51,7 +51,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .bg-primary {
-	background-color: #ff6666 !important;
+	background-color: white !important;
 }
 
 .bg-dark {
@@ -122,12 +122,12 @@ img::-moz-selection {
 
 #mainNav .navbar-brand:focus, #mainNav .navbar-brand:hover {
 	/* 		color: #d2d7d3; */
-	color: #ff6666;
+	color: #64b39a;
 }
 
 #mainNav .navbar-brand:hover {
 	/* 	color: #d2d7d3; */
-	color: #ff6666;
+	color: #64b39a;
 }
 
 #mainNav .navbar-nav>li.nav-item>a.nav-link, #mainNav .navbar-nav>li.nav-item>a.nav-link:focus
@@ -141,13 +141,13 @@ img::-moz-selection {
 #mainNav .navbar-nav>li.nav-item>a.nav-link:hover, #mainNav .navbar-nav>li.nav-item>a.nav-link:focus:hover
 	{
 	/* 	color: #d2d7d3; */
-	color: #ff6666;
+	color: #64b39a;
 }
 
 #mainNav .navbar-nav>li.nav-item>a.nav-link.active, #mainNav .navbar-nav>li.nav-item>a.nav-link:focus.active,
 #mainNav .navbar-nav>li.nav-item>div>a.nav-link.active, #mainNav .navbar-nav>li.nav-item>div>a.nav-link:focus.active 
 	{
-	color: #ff6666 !important;
+	color: #64b39a !important;
 	background-color: transparent;
 }
 
@@ -171,7 +171,7 @@ img::-moz-selection {
 	/* 	} */
 	#mainNav .navbar-brand:hover {
 		/*     color: #fff; */
-		color: #ff6666;
+		color: #64b39a;
 	}
 	#mainNav .navbar-nav>li.nav-item>a.nav-link {
 		padding: 0.5rem 1rem;
@@ -184,7 +184,7 @@ img::-moz-selection {
 	#mainNav .navbar-nav>li.nav-item>a.nav-link:hover, #mainNav .navbar-nav>li.nav-item>a.nav-link:focus:hover
 		{
 		/*     color: #fff; */
-		color: #ff6666;
+		color: #64b39a;
 	}
 	#mainNav.navbar-shrink {
 		border-bottom: 1px solid rgba(33, 37, 41, 0.1);
@@ -195,7 +195,7 @@ img::-moz-selection {
 	}
 	#mainNav.navbar-shrink .navbar-brand:focus, #mainNav.navbar-shrink .navbar-brand:hover
 		{
-		color: #ff6666;
+		color: #64b39a;
 	}
 	#mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link, #mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link:focus
 		{
@@ -204,7 +204,7 @@ img::-moz-selection {
 	#mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link:hover,
 		#mainNav.navbar-shrink .navbar-nav>li.nav-item>a.nav-link:focus:hover
 		{
-		color: #ff6666;
+		color: #64b39a;
 	}
 	section {
 		padding: 6rem 0;
@@ -372,7 +372,7 @@ header.masthead p {
 }
 
 .text-primary {
-	color: #ff6666 !important;
+	color: #64b39a !important;
 }
 
 .btn {
@@ -381,6 +381,8 @@ header.masthead p {
 	border: none;
 	border-radius: 300px;
 	font-size: 1.2rem;
+	background-color: #64b39a;
+	color: white;
 	font-family: 'Nanum Pen Script', 'Do Hyeon', 'Open Sans',
 		'Helvetica Neue', Arial, sans-serif;
 }
@@ -390,8 +392,10 @@ header.masthead p {
 }
 
 .btn-primary {
-	background-color: #ff6666;
-	border-color: #ff6666;
+	background-color: white;
+	border-color: white;
+	color: #64b39a;
+	font-weight: 600;
 }
 
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
@@ -420,7 +424,7 @@ header.masthead p {
 
 .dropdown-menu a:hover {
 	background-color: inherit;
-	color: #ff6666;
+	color: #64b39a;
 }
 
 #dropdownMenuLink {
@@ -432,7 +436,7 @@ header.masthead p {
 }
 
 #dropdownMenuLink:hover {
-	color: #ff6666 !important;
+	color: #64b39a !important;
 }
 
 #dropdownMenuLink:focus {
@@ -468,5 +472,11 @@ form.daumMapForm input[readonly], textarea[readonly]{
 
 .introtext {
 	font-family: 'Do Hyeon', 'Titillium Web', 'Nanum Myeongjo';
-	font-size: 1.1rem;
+	font-size: 1.2rem;
+	color: #64b39a;
+	font-weight: 600;
+}
+.titletext {
+	color: #64b39a !important;
+	font-weight: 600;
 }

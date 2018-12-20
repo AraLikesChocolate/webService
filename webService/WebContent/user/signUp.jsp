@@ -9,6 +9,12 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>시작 페이지</title>
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
+<script type="text/javascript">
+	// 취소 버튼 클릭시 로그인 화면으로 이동
+	function redirect() {
+		window.location.href = '${path}/index.jsp';
+	}
+</script>
 <link href="${path}/asset/css/creative.css" rel="stylesheet">
 <link href="${path}/asset/css/sign.css" rel="stylesheet">
 
@@ -127,8 +133,8 @@
 					<br>
 					<div class="row submit">
 						<div class="large-9 columns large-centered btnTwo">
-							<input type="reset" value="취소">
-							<input type="submit" value="가입">
+							<input type="button" value="CANCEL" onclick="redirect()">
+							<input type="submit" value="JOIN">
 						</div>
 					</div>
 					<br>
