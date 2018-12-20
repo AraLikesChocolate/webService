@@ -103,6 +103,7 @@ img::-moz-selection {
 }
 
 #mainNav {
+	z-index: 10;
 	border-bottom: 1px solid rgba(33, 37, 41, 0.1);
 	background-color: #fff;
 	font-family: 'Nanum Pen Script', 'Do Hyeon', 'Open Sans',
@@ -159,7 +160,9 @@ img::-moz-selection {
 @media ( min-width : 992px) {
 	#mainNav {
 		border-color: transparent;
-		background-color: transparent;
+/* 		background-color: transparent; */
+/* margin-top: 1%; */
+background-color: white;
 	}
 	#mainNav .navbar-brand {
 		/*     color: rgba(255, 255, 255, 0.7); */

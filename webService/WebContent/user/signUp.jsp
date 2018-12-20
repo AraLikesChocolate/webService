@@ -153,7 +153,7 @@
 		src="${path}/asset/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
 
 	<!-- Custom scripts for this template -->
-	<script src="${path}/asset/js/creative.min.js"></script>
+	<script src="${path}/asset/js/creative.js"></script>
 	
 	<!-- sourceURL=pen.js -->
 	<script

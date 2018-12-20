@@ -9,13 +9,25 @@
 <c:set var="path" value="${pageContext.request.contextPath}"></c:set>
 <link href="${path}/asset/css/creative.css" rel="stylesheet">
 <link href="${path}/asset/css/sign.css" rel="stylesheet">
-	
+
+<!-- Bootstrap core CSS -->
+<link href="${path}/asset/vendor/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+
+<!-- Custom fonts for this template -->
+<link href="${path}/asset/vendor/fontawesome-free/css/all.min.css"
+	rel="stylesheet" type="text/css">
+
 <!-- source codepen.io -->
 <link
 	href="https://cdn.jsdelivr.net/foundation/6.2.0/foundation.min.css"
 	rel="stylesheet">
 <link
 	href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"
+	rel="stylesheet">
+
+<!-- Plugin CSS -->
+<link href="${path}/asset/vendor/magnific-popup/magnific-popup.css"
 	rel="stylesheet">
 </head>
 <body>
@@ -57,8 +69,21 @@
 			<span class='morphButton'> <i class="fa fa-refresh fa-spin loading"></i>
 				<i class="fa fa-check success"></i> <i class="fa fa-times failure"></i>
 			</span> <span class="morphHeader"><span>SIGN IN</span></span>
+			
 	</div>
+<br><br><br><br><br>
+<script src="${path}/asset/vendor/jquery/jquery.min.js"></script>
+	<script src="${path}/asset/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
+	<!-- Plugin JavaScript -->
+	<script src="${path}/asset/vendor/jquery-easing/jquery.easing.min.js"></script>
+	<script src="${path}/asset/vendor/scrollreveal/scrollreveal.min.js"></script>
+	<script
+		src="${path}/asset/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+	<!-- Custom scripts for this template -->
+	<script src="${path}/asset/js/creative.js"></script>
+	
 	<!-- sourceURL=pen.js -->
 	<script
 		src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js'></script>
@@ -66,6 +91,6 @@
 	<script
 		src='//static.codepen.io/assets/common/stopExecutionOnTimeout-41c52890748cd7143004e05d3c5f786c66b19939c4500ce446314d1748483e13.js'></script>
 	<!-- Custom scripts for this template -->
-	<script src="${path}/asset/js/login.js"></script>
+	<script src="${path}/asset/js/loginPop.js"></script>
 </body>
 </html>
