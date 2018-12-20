@@ -282,7 +282,7 @@ header.masthead p {
 	}
 	.btn-loc {
 		position: relative;
-		top: 475%;
+		top: 400%;
 	}
 	#portfolio {
 		padding: 6rem 0 !important;
@@ -482,4 +482,24 @@ form.daumMapForm input[readonly], textarea[readonly]{
 .titletext {
 	color: #64b39a !important;
 	font-weight: 600;
+}
+#addElmt{
+	text-align: center;
+}
+#addElmt label i {
+	padding-top: 4.5px;
+}
+.addMargin{
+	margin-bottom: 20% !important;
+}
+.addInput{
+	padding-left: 2% !important;
+	width: 75% !important; 
+	display:inline;
+	font-weight: 600 !important;
+}
+.addBtn{
+	margin-left: 3%;
+	width: 20% !important; 
+	line-height: 1.5rem;
 }

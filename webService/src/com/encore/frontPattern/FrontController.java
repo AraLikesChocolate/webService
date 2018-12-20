@@ -1,7 +1,9 @@
 package com.encore.frontPattern;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.RequestDispatcher;
@@ -65,7 +67,7 @@ public class FrontController extends HttpServlet {
 			if (method.equals("get")) {
 				map.put("id", (String) request.getParameter("id"));
 			} else {
-				System.out.println("sess.user == null? " + (sess.getAttribute("user") == null));
+//				System.out.println("sess.user == null? " + (sess.getAttribute("user") == null));
 				map.put("id", ((UserVO) sess.getAttribute("user")).getId());
 				map.put("password", (String) request.getParameter("password"));
 			}
@@ -96,7 +98,7 @@ public class FrontController extends HttpServlet {
 			page = signFolderName + "userResult.jsp";
 			break;
 
-		// 6. addressInsert -- 주소 입력처리
+		// 5. addressInsert -- 주소 입력처리
 		case "/user/addressInsert":
 			controller = new AddressInsertController();
 			if (method.equals("get")) {
@@ -104,9 +106,13 @@ public class FrontController extends HttpServlet {
 				page = signFolderName + "addressInsert.jsp";
 			} else {
 //                System.out.println("post 도착...");
-				map.put("useradd", new AddressVO(request.getParameter("id"), 1, request.getParameter("address"),
-						request.getParameter("isMain")));
-				System.out.println(map.get("useradd"));
+				List<AddressVO> addlist = new ArrayList<>();
+				int index = 1;
+				while(request.getParameter("addNo" + index) != null)
+					addlist.add(new AddressVO(((UserVO)sess.getAttribute("user")).getId(), index,  request.getParameter("addNo" + index++),
+							request.getParameter("isMain").equals("true")? "T" : "F"));
+				map.put("addlist", addlist);
+//				System.out.println(map.get("useradd"));
 				page = signFolderName + "userResult.jsp";
 			}
 			break;
@@ -133,7 +139,7 @@ public class FrontController extends HttpServlet {
 				map.put("userResult", "회원 탈퇴가 이루어지지 않았습니다.");
 			page = signFolderName + "userResult.jsp";
 		} else if (requestURI.equals("/user/signUp") && method.equals("get")) {
-			System.out.println("set session" + map.get("user"));
+//			System.out.println("set session" + map.get("user"));
 			sess.setAttribute("user", map.get("user"));
 		}
 

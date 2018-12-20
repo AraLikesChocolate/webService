@@ -2,10 +2,8 @@ package com.encore.frontPattern;
 
 import java.util.Map;
 
-
 import com.encore.model.UserService;
 import com.encore.model.UserVO;
-import com.encore.util.DateUtil;
 
 public class UserUpdateController implements CommonCtroller {
 	UserService service = new UserService();

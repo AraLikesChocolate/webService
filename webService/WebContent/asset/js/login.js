@@ -111,7 +111,7 @@ function morphSuccess() {
 		} }, 0.1);
 	
 
-		$(window).setTimeOut(location.href = "../index.jsp", 5000);
+		window.location.replace("../index.jsp");
 	
 }
 

@@ -6,7 +6,7 @@ public class UserService {
 	public UserVO selectUser(String id, String psw) {
 		return UserDAO.selectUser(id, psw);
 	}
-	
+
 	public List<UserVO> selectAllUser() {
 		return UserDAO.selectAllUser();
 	}
@@ -18,7 +18,7 @@ public class UserService {
 	public int insertUser(UserVO user) {
 		return UserDAO.insertUser(user);
 	}
-	
+
 	public int updateUser(UserVO user) {
 		return UserDAO.updateUser(user);
 	}
@@ -29,7 +29,7 @@ public class UserService {
 
 	public boolean checkUserPw(String id, String password) {
 		// TODO Auto-generated method stub
-		return UserDAO.checkUserPw(id,password);
+		return UserDAO.checkUserPw(id, password);
 	}
 
 	public List<AddressVO> selectAllAdd() {
@@ -37,10 +37,15 @@ public class UserService {
 		return UserDAO.selectAllAdd();
 	}
 
-	public int insertAdd(AddressVO useradd) {
+	public int insertAdd(List<AddressVO> addlist) {
 		// TODO Auto-generated method stub
-		return UserDAO.insertUser(useradd);
+		int count = 0;
+		int realCnt = UserDAO.countRows(addlist.get(0).getId());
+		for (AddressVO add : addlist) {
+			add.setAddNo(add.getAddNo()+realCnt);
+			count += UserDAO.insertUser(add);
+		}
+		return count;
 	}
 
-	
 }

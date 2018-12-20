@@ -54,8 +54,9 @@ input[type="email"], input[type="text"], input[type="password"], input[type="che
 input[type="email"], input[type="text"], input[type="checkbox"], input[type="date"],
 	input[type="password"] {
 	/* 	color: #cccccc !important; */
-	padding-left: 4.3em;
+	padding-left: 5em !important;
 	font-family: 'Titillium Web', 'Do Hyeon', 'Nanum Myeongjo' !important;
+	font-
 }
 
 input:disabled, input[readonly], textarea:disabled, textarea[readonly] {
@@ -307,4 +308,11 @@ p.intro2 {
 		width: 20%;
 /* 		display:inline-block; */
 	}
+}
+
+.addInput input, input[typ="text"]{
+	padding-left: 4% !important;
+	width: 75% !important; 
+	display:inline;
+	font-weight: 600 !important;
 }

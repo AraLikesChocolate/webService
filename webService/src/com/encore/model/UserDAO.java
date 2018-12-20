@@ -95,7 +95,7 @@ public class UserDAO {
 			st.setDate(6, user.getBirthday());
 			st.setString(7, user.getUserinfo());
 			count = st.executeUpdate();
-			System.out.println(count);
+//			System.out.println(count);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -272,6 +272,32 @@ public class UserDAO {
 		
 		return count;
 	
+	}
+
+
+	public static int countRows(String id) {
+		// TODO Auto-generated method stub
+		int count = 0;
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		ResultSet rs = null;
+		try {
+			conn = OracleDBUtil.getConnection();
+			psmt = conn.prepareStatement("select count(*) from address where id = ?");
+			psmt.setString(1, id);
+			rs = psmt.executeQuery();
+			if(rs.next())
+				count = rs.getInt(1);
+			System.out.println(count);
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			OracleDBUtil.dbDisconnect(conn, rs, psmt);
+		}
+		
+		return count;
+
 	}
 
 
