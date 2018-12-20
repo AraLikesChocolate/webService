@@ -405,6 +405,9 @@ header.masthead p {
 	box-shadow: 0 0 0 0.2rem rgba(210, 215, 211, 0.5) !important;
 }
 
+.dropdown {
+	margin-top: 1.4px;
+}
 .dropdown-menu {
 	border: none;
 	width: auto;
@@ -461,4 +464,9 @@ form.daumMapForm input[type="text"]{
 
 form.daumMapForm input[readonly], textarea[readonly]{
 	background-color: #e6e6e6a1 !important;
+}
+
+.introtext {
+	font-family: 'Do Hyeon', 'Titillium Web', 'Nanum Myeongjo';
+	font-size: 1.1rem;
 }

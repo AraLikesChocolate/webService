@@ -49,10 +49,16 @@
 				<div class="col-lg-8 mx-auto text-center">
 					<h2 class="section-heading text-white">오작교 서비스는..</h2>
 					<hr class="light my-4">
-					<p class="text-faded mb-4">Start Bootstrap has everything you
-						need to get your new website up and running in no time! All of the
-						templates and themes on Start Bootstrap are open source, free to
-						download, and easy to use. No strings attached!</p>
+					<pre class="text-faded mb-4 introtext">
+오늘의 작은 교감을 이루어주는 까마귀와 까치의 역할을 합니다.
+
+칠석날 견우와 직녀의 두 별을 만나게 하기 위하여
+까마귀와 까치가 만드는 다리를 의미하는 오작교에 대해 들어보셨나요?
+
+첫인상을 좌우하는 첫 데이트 장소 또는
+사랑하는 사람과의 관계를 더욱 돈독하게 해줄 특별한 장소를 검색해보세요!</pre>
+
+
 					<a class="btn btn-light btn-xl js-scroll-trigger" href="#services">서비스로
 						이동</a>
 				</div>
@@ -339,7 +345,7 @@
 			// 출발 마커의 드래그가 시작될 때 마커 이미지를 변경합니다
 			startMarker.setImage(startDragImage);
 		});
-		
+
 		var geocoder = new daum.maps.services.Geocoder();
 		// 출발 마커에 dragend 이벤트를 등록합니다
 		daum.maps.event.addListener(startMarker, 'dragend', function() {
@@ -355,17 +361,18 @@
 
 			var coord = startMarker.getPosition();
 			var callback = function(result, status) {
-			    if (status === daum.maps.services.Status.OK) {
-			    	resultDiv.value = result[0].address.address_name+ "," + latlng.getLat() + "," + latlng.getLng();
-			    	resultDiv.innerHTML = result[0].address.address_name+ "," + latlng.getLat() + "," + latlng.getLng();
-			    }
+				if (status === daum.maps.services.Status.OK) {
+					resultDiv.value = result[0].address.address_name + ","
+							+ latlng.getLat() + "," + latlng.getLng();
+					resultDiv.innerHTML = result[0].address.address_name + ","
+							+ latlng.getLat() + "," + latlng.getLng();
+				}
 			};
 			geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
 
-			
-// 			resultDiv.value = re + "," + latlng.getLat() + "," + latlng.getLng();
+			// 			resultDiv.value = re + "," + latlng.getLat() + "," + latlng.getLng();
 			resultDiv.innerHTML = resultDiv.value;
-// 			resultDiv.innerHTML = message;
+			// 			resultDiv.innerHTML = message;
 		});
 
 		var arriveSrc = 'http://t1.daumcdn.net/localimg/localimages/07/mapapidoc/blue_b.png', // 도착 마커이미지 주소입니다    
@@ -423,15 +430,17 @@
 			var resultDiv = document.getElementById('arrive');
 			var coord = arriveMarker.getPosition();
 			var callback = function(result, status) {
-			    if (status === daum.maps.services.Status.OK) {
-			    	resultDiv.value = result[0].address.address_name+ "," + latlng.getLat() + "," + latlng.getLng();
-			    	resultDiv.innerHTML = result[0].address.address_name+ "," + latlng.getLat() + "," + latlng.getLng();
-			    }
+				if (status === daum.maps.services.Status.OK) {
+					resultDiv.value = result[0].address.address_name + ","
+							+ latlng.getLat() + "," + latlng.getLng();
+					resultDiv.innerHTML = result[0].address.address_name + ","
+							+ latlng.getLat() + "," + latlng.getLng();
+				}
 			};
 			geocoder.coord2Address(coord.getLng(), coord.getLat(), callback);
-// 			resultDiv.value = latlng.getLat()+","+latlng.getLng();
-// 			resultDiv.innerHTML = resultDiv.value;
-// 			resultDiv.innerHTML = message;
+			// 			resultDiv.value = latlng.getLat()+","+latlng.getLng();
+			// 			resultDiv.innerHTML = resultDiv.value;
+			// 			resultDiv.innerHTML = message;
 		});
 
 		function searchAddrFromCoords(coords, callback) {
