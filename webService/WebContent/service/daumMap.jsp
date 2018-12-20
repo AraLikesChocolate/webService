@@ -12,8 +12,8 @@
 <form action="FrontController" class="daumMapForm"
 	style="transform: translateY(20%); padding-left: 15px; padding-right: 15px;">
 	<div class="row btnTwo2" style="margin: 0 auto;">
-			<input type="text" id="start" name="start" readonly="readonly">
-			<input type="text" id="arrive" name="arrive" readonly="readonly">&nbsp;&nbsp;&nbsp;&nbsp;
+			<input type="text" id="start" name="start" readonly="readonly" placeholder="출발지를 드래그 해주세요.">
+			<input type="text" id="arrive" name="arrive" readonly="readonly" placeholder="도착지를 드래그 해주세요.">&nbsp;&nbsp;&nbsp;&nbsp;
 			<input type="submit" value="검색">
 		
 	</div>
