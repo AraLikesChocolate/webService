@@ -30,7 +30,7 @@ public class FrontController extends HttpServlet {
 		// TODO Auto-generated method stub
 		String path = getServletContext().getRealPath("WEB_INF");
 		try {
-			ChromeDriverUtil.naver(request, response, path);
+//			ChromeDriverUtil.naver(request, response, path);
 //			ChromeDriverUtil.naverDetail(request, response, path);
 //			
 //			String[] dlist = ChromeDriverUtil.daum(path);

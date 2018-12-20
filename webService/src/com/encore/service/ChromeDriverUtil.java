@@ -19,11 +19,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+//import kr.hyosang.coordinate.CoordPoint;
+
 import kr.hyosang.coordinate.CoordPoint;
 import kr.hyosang.coordinate.TransCoord;
-
-//import kr.hyosang.coordinate.CoordPoint;
-//import kr.hyosang.coordinate.TransCoord;
 
 public class ChromeDriverUtil {
 	public static void naver(HttpServletRequest request, HttpServletResponse response, String path) throws InterruptedException {
@@ -134,9 +133,9 @@ public class ChromeDriverUtil {
 //		String coords = Jsoup.connect(url).referrer("http://map.daum.net/").userAgent(
 //				"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/70.0.3538.110 Safari/537.36")
 //				.ignoreContentType(true).execute().body();
-		String transCoordpath = path + "\\TransCoord";
-		String coordPointClass = path + "\\CoordPoint";
-//		VertxApp.getClassLoader().getResource(path + "\\lib\\kr\\hyosang\\coordinate\\TransCoord");
+//		String transCoordpath = path + "\\TransCoord";
+//		String coordPointClass = path + "\\CoordPoint";
+//		Class.class.getClassLoader().getResource(path + "\\lib\\kr\\hyosang\\coordinate\\TransCoord");
 //		Class.forName(coordPointClass);
 		CoordPoint start = wCongnamul(Double.parseDouble(starts[2]), Double.parseDouble(starts[1]));
 		CoordPoint end = wCongnamul(Double.parseDouble(ends[2]), Double.parseDouble(ends[1]));

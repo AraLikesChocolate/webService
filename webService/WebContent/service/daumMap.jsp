@@ -13,7 +13,7 @@
 	style="transform: translateY(70%); padding-left: 15px; padding-right: 15px;">
 	<div class="row" style="margin-left: 0px; margin-right: 0px;">
 		<div class="col-5">
-			<input type="text" id="arrive" name="arrive" readonly="readonly">
+			<input type="text" id="start" name="start" readonly="readonly">
 		</div>
 		<div class="col-5">
 			<input type="text" id="arrive" name="arrive" readonly="readonly">
