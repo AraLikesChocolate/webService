@@ -136,8 +136,7 @@
 					</div>
 
 					<!-- 주소 -->
-					<div class="row password">
-						<input type="checkbox" name="isMain" value="true" checked>
+					<div class="row username">
 						<div class="large-9 columns large-centered" id="addElmt">
 							<label for="address"><i class="fa font"> 주소 검색</i></label>
 							<div class="pac-card" id="pac-card">
