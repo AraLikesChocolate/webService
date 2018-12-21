@@ -17,6 +17,7 @@
 }
 
 #pac-container {
+	background-color: red;
 	padding-bottom: 12px;
 	margin-right: 12px;
 }
@@ -45,5 +46,5 @@
 }
 
 #pac-input:focus {
-	border-color: #4d90fe;
+	border-color: #64b39a;
 }
