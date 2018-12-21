@@ -233,7 +233,7 @@ public class UserDAO {
 		} finally {
 			OracleDBUtil.dbDisconnect(conn, rs, psmt);
 		}
-		System.out.println(addlist);
+//		System.out.println(addlist);
 		return addlist;
 	
  	}
@@ -296,6 +296,51 @@ public class UserDAO {
 		
 		return count;
 
+	}
+
+
+	public static int updateAddMain(String id, int addNo) {
+		int count = 0;
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		ResultSet rs = null;
+		try {
+			conn = OracleDBUtil.getConnection();
+			psmt = conn.prepareStatement("update address set isMain = ? where id = ? and addNo = ?");
+			psmt.setString(1, "T");
+			psmt.setString(2, id);
+			psmt.setInt(3, addNo);
+			count = psmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			OracleDBUtil.dbDisconnect(conn, rs, psmt);
+		}
+		
+		return count;
+
+	}
+
+
+	public static void updateAddReset(String id) {
+		// TODO Auto-generated method stub
+		Connection conn = null;
+		PreparedStatement psmt = null;
+		ResultSet rs = null;
+		try {
+			conn = OracleDBUtil.getConnection();
+			psmt = conn.prepareStatement("update address set isMain = 'F' where id = ?");
+			psmt.setString(1, id);
+			psmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} finally {
+			OracleDBUtil.dbDisconnect(conn, rs, psmt);
+		}
 	}
 
 

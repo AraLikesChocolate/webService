@@ -78,7 +78,7 @@ function morphSuccess() {
 
 	var timeline = new TimelineMax();
 	timeline.to($(".loading"), 1.5, { "scale": "0", "opacity": "0", ease: Elastic.easeIn, onComplete: function () {$(".loading").css("display", "none");} }).
-	to($(".morphButton"), 0.5, { "backgroundColor": "#ff6666", ease: Back.easeInOut }).
+	to($(".morphButton"), 0.5, { "backgroundColor": "#64b39a", ease: Back.easeInOut }).
 	to($(".success"), 1, { "scale": "0", "opacity": "1", "display": "inline-block", ease: Elastic.easeOut }, "-=0.3").
 	staggerTo(elements, 0.5, { "scale": 0, "opacity": 0, ease: Back.easeIn, onComplete: function () {
 			var headerAnim = $(".morphHeader");
@@ -122,7 +122,7 @@ function morphFail() {
 			TweenMax.to($(".failure"), 0.5, { "scale": "1", "opacity": "1", "display": "inline-block", ease: Elastic.easeOut }, "-=0.3");TweenMax.to([$(".wrapper"), $(".morphButton")], 0.1, { x: "+=10", yoyo: true, repeat: 5, ease: Power4.easeInOut });
 		} }).
 	to([$(".failure"), $(".morphButton")], 0.5, { "opacity": "0", delay: 1 }).
-	to($(".morphButton"), 0.3, { "width": $(".submit input[type='submit']").outerWidth(), "backgroundColor": "#ff6666", "left": "-1000px" }).
+	to($(".morphButton"), 0.3, { "width": $(".submit input[type='submit']").outerWidth(), "backgroundColor": "#64b39a", "left": "-1000px" }).
 	set([$(".success"), $(".failure")], { "display": "none" }).
 	to($(".submit input[type='submit']"), 0, { "opacity": 1, "visibility": "visible", onComplete: function () {
 			TweenMax.to($(".intro1"), 1, { "opacity": 0 });

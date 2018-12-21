@@ -316,3 +316,10 @@ p.intro2 {
 	display:inline;
 	font-weight: 600 !important;
 }
+.addradio {
+	display: inline !important;
+}
+.addtext {
+	display: inline !important;
+	width: 90% !important;
+}

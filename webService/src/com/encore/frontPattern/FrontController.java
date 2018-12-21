@@ -123,6 +123,8 @@ public class FrontController extends HttpServlet {
 				map.put("id", ((UserVO) sess.getAttribute("user")).getId());
 				page = signFolderName + "addlist.jsp";
 			} else {
+				map.put("id", ((UserVO) sess.getAttribute("user")).getId());
+				map.put("addNo", request.getParameter("isMain"));
 				page = signFolderName + "userResult.jsp";
 			}
 			break;

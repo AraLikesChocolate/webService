@@ -34,19 +34,22 @@
 	<jsp:include page="../nav.jsp"></jsp:include>
 	<div id="my_container container">
 		<!-- 			<form method="post" autocomplete="off" action="sign.go" id="signForm"> -->
-		<form method="post" autocomplete="off" id="signForm">
+		<form method="post" action= "setMyAdd.go" autocomplete="off" id="signForm">
 			<div class="row signRow info">
 				<div
 					class="wrapper large-5 columns large-centered small-7 small-centered">
 					<div class="row header">
-						<div class="large-12 columns">나의 주소 목록</div>
+						<div class="large-12 columns">
+						<h1>나의 주소 목록</h1>
+						<h6>- 짝꿍과 공유할 주소를 선택해 주세요 -</h6>
+						</div>
 					</div>
 					<c:forEach items="${addlist}" var="add">
 						<div class="row username">
 							<div class="large-9 columns large-centered">
 								<label for="id"><i class="fa"></i></label> <input type="radio"
-									name="isMain" value="${add.addNo}"> <input type="text"
-									value="${add.address}" readonly="readonly">
+									name="isMain" class = "addradio" value="${add.addNo}" ${add.isMain == 'T'? "checked='checked'":""}> <input type="text"
+									 class = "addtext" value="${add.address}" readonly="readonly" style="padding-left: 20px !important">
 							</div>
 						</div>
 					</c:forEach>

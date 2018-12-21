@@ -48,4 +48,10 @@ public class UserService {
 		return count;
 	}
 
+	public int updateAddMain(String id, int addNo) {
+		// TODO Auto-generated method stub
+		UserDAO.updateAddReset(id);
+		return UserDAO.updateAddMain(id,addNo);
+	}
+
 }
