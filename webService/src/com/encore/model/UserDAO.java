@@ -73,7 +73,7 @@ public class UserDAO {
 		user.setEmail(rs.getString("email"));
 		user.setGender(rs.getString("gender"));
 		user.setBirthday(rs.getDate("birthday"));
-		user.setUserinfo(rs.getString("userinfo"));
+		user.setPartner(rs.getString("userinfo"));
 		
 		return user;
 	}
@@ -93,7 +93,7 @@ public class UserDAO {
 			st.setString(4, user.getEmail());
 			st.setString(5, user.getGender());
 			st.setDate(6, user.getBirthday());
-			st.setString(7, user.getUserinfo());
+			st.setString(7, user.getPartner());
 			count = st.executeUpdate();
 //			System.out.println(count);
 		} catch (SQLException e) {
@@ -123,7 +123,7 @@ public class UserDAO {
 			st.setString(3, user.getEmail());
 			st.setString(4, user.getGender());
 			st.setDate(5, user.getBirthday());
-			st.setString(6, user.getUserinfo());
+			st.setString(6, user.getPartner());
 			st.setString(7, user.getId());
 			count = st.executeUpdate();
 			

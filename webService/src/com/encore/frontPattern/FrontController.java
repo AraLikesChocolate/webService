@@ -78,7 +78,7 @@ public class FrontController extends HttpServlet {
 			map.put("user",
 					new UserVO(request.getParameter("id"), request.getParameter("password"),
 							request.getParameter("name"), request.getParameter("email"), request.getParameter("gender"),
-							DateUtil.stringToDate(request.getParameter("birthday")), request.getParameter("userinfo")));
+							DateUtil.stringToDate(request.getParameter("birthday")), request.getParameter("partner")));
 			if (method.equals("get")) {
 				// 회원 정보 수정
 				controller = new UserUpdateController();
@@ -110,7 +110,7 @@ public class FrontController extends HttpServlet {
 				int index = 1;
 				while(request.getParameter("addNo" + index) != null)
 					addlist.add(new AddressVO(((UserVO)sess.getAttribute("user")).getId(), index,  request.getParameter("addNo" + index++),
-							request.getParameter("isMain").equals("true")? "T" : "F"));
+							"F"));
 				map.put("addlist", addlist);
 //				System.out.println(map.get("useradd"));
 				page = signFolderName + "userResult.jsp";

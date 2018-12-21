@@ -9,14 +9,13 @@ public class UserVO {
 	private String email;
 	private String gender;
 	private Date birthday;
-	private String userinfo;
+	private String partner;
 
 	public UserVO() {
 		super();
 	}
 
-	public UserVO(String id, String password, String name, String email, String gender, Date birthday,
-			String userinfo) {
+	public UserVO(String id, String password, String name, String email, String gender, Date birthday, String partner) {
 		super();
 		this.id = id;
 		this.password = password;
@@ -24,7 +23,7 @@ public class UserVO {
 		this.email = email;
 		this.gender = gender;
 		this.birthday = birthday;
-		this.userinfo = userinfo;
+		this.partner = partner;
 	}
 
 	public String getId() {
@@ -75,18 +74,18 @@ public class UserVO {
 		this.birthday = birthday;
 	}
 
-	public String getUserinfo() {
-		return userinfo;
+	public String getPartner() {
+		return partner;
 	}
 
-	public void setUserinfo(String userinfo) {
-		this.userinfo = userinfo;
+	public void setPartner(String partner) {
+		this.partner = partner;
 	}
 
 	@Override
 	public String toString() {
 		return "UserVO [id=" + id + ", password=" + password + ", name=" + name + ", email=" + email + ", gender="
-				+ gender + ", birthday=" + birthday + ", userinfo=" + userinfo + "]";
+				+ gender + ", birthday=" + birthday + ", partner=" + partner + "]";
 	}
 
 }

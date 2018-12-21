@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%><%@ taglib prefix="c"
 	uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -110,15 +111,14 @@
 									autocomplete="off" />
 							</div>
 						</div>
-						<!-- 내정보기억하기 -->
+						<!-- 짝꿍입력-->
 						<div class="row password">
-							<div class="large-9 columns large-centered"
-								style="padding-left: 5%;">
-								<label for="userinfo"><i class="fa "></i></label>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내 정보 저장: &nbsp;&nbsp;&nbsp;<input
-									id="userinfo" type="checkbox" name="userinfo"
-									placeholder="내 정보 기억하기" autocomplete="off"
-									style="margin-left: 8%" />
+							<div class="large-9 columns large-centered">
+								<label for="partner"><i class="fa font">짝꿍</i></label> <input
+									id="partner" type="text" name="partner"
+									placeholder="짝꿍의 id를 입력하세요." autocomplete="off" /><input
+									type="text" id="partnerCheck" placeholder="짝꿍을 입력하지 않았습니다."
+									readonly="readonly">
 							</div>
 						</div>
 						<!-- 회원가입 -->
@@ -207,14 +207,20 @@
 									value="${user.birthday }" required autocomplete="off" />
 							</div>
 						</div>
-						<!-- 내정보기억하기 -->
+						<!-- 짝꿍입력-->
 						<div class="row password">
-							<div class="large-9 columns large-centered"
-								style="padding-left: 5%;">
-								<label for="userinfo"><i class="fa "></i></label>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;내 정보 저장: <input type="checkbox"
-									placeholder="내 정보 기억하기" autocomplete="off"
-									style="margin-left: 8%" />
+							<div class="large-9 columns large-centered">
+								<label for="partner"><i class="fa font">짝꿍</i></label> <input
+									id="partner" type="text" name="partner"
+									value="${user.partner }" autocomplete="off" />
+								<c:if test="${fn:length(user.partner) == 0}">
+									<input type="text" id="partnerCheck"
+										placeholder="짝꿍을 입력하지 않았습니다." readonly="readonly">
+								</c:if>
+								<c:if test="${fn:length(user.partner) != 0}">
+									<input type="text" id="partnerCheck" placeholder="유효한 짝꿍입니다."
+										readonly="readonly">
+								</c:if>
 							</div>
 						</div>
 						<!-- 회원가입 -->
@@ -320,6 +326,30 @@
 						else {
 							$('#idCheck').val("사용불가능한 아이디입니다.");
 							id.val('');
+						}
+					}
+				});
+			});
+		});
+		$(function() {
+			var partner = $('#partner');
+			partner.blur(function() {
+				if (document.getElementById('partner').value.length == 0) {
+					document.getElementById("partnerCheck").setAttribute(
+							"placeholder", "짝꿍을 입력하지 않았습니다.");
+					$('#partnerCheck').val('');
+					return;
+				}
+				var url = "IdCheckForm.go?id="
+						+ document.getElementById('partner').value;
+				// 				console.log( "value:" + document.getElementById('partner').value + " length: " + document.getElementById('partner').value.length);
+				$.get(url, function(data, status) {
+					if (status == "success") {
+						if (data.length == 7)
+							$('#partnerCheck').val("유효한 짝궁입니다.");
+						else {
+							$('#partnerCheck').val("존재하지 않는 짝궁입니다.");
+							partner.val('');
 						}
 					}
 				});
