@@ -13,7 +13,6 @@ public class AddressInsertController implements CommonCtroller {
 	@Override
 	public void execute(Map<String, Object> map) {
 		if(((String) map.get("method")).equals("get")) {
-			map.put("addlist", service.selectAllAdd());
 			}else {
 				@SuppressWarnings("unchecked")
 				List<AddressVO> addlist = (ArrayList<AddressVO>) map.get("addlist");

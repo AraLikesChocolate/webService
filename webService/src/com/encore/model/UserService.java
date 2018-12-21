@@ -32,9 +32,9 @@ public class UserService {
 		return UserDAO.checkUserPw(id, password);
 	}
 
-	public List<AddressVO> selectAllAdd() {
+	public List<AddressVO> selectAllAdd(String id) {
 		// TODO Auto-generated method stub
-		return UserDAO.selectAllAdd();
+		return UserDAO.selectAllAdd(id);
 	}
 
 	public int insertAdd(List<AddressVO> addlist) {

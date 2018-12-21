@@ -215,27 +215,25 @@ public class UserDAO {
 
 	}
 
-	public static List<AddressVO> selectAllAdd() {
+	public static List<AddressVO> selectAllAdd(String id) {
 		Connection conn = null;
-		Statement st = null;
+		PreparedStatement psmt = null;
 		ResultSet rs = null;
-		String sql = "select * from address order by 1";
-
 		List<AddressVO> addlist = new ArrayList<>();
-		
-		
 		try {
 			conn = OracleDBUtil.getConnection();
-			st = conn.createStatement();
-			rs = st.executeQuery(sql);
+			psmt = conn.prepareStatement("select * from address where id = ? order by 1");
+			psmt.setString(1, id);
+			rs = psmt.executeQuery();
 			while(rs.next()) 
 				addlist.add(makeAdd(rs));
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} finally {
-			OracleDBUtil.dbDisconnect(conn, rs, st);
+			OracleDBUtil.dbDisconnect(conn, rs, psmt);
 		}
+		System.out.println(addlist);
 		return addlist;
 	
  	}

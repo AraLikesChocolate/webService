@@ -108,11 +108,21 @@ public class FrontController extends HttpServlet {
 //                System.out.println("post 도착...");
 				List<AddressVO> addlist = new ArrayList<>();
 				int index = 1;
-				while(request.getParameter("addNo" + index) != null)
-					addlist.add(new AddressVO(((UserVO)sess.getAttribute("user")).getId(), index,  request.getParameter("addNo" + index++),
-							"F"));
+				while (request.getParameter("addNo" + index) != null)
+					addlist.add(new AddressVO(((UserVO) sess.getAttribute("user")).getId(), index,
+							request.getParameter("addNo" + index++), "F"));
 				map.put("addlist", addlist);
 //				System.out.println(map.get("useradd"));
+				page = signFolderName + "userResult.jsp";
+			}
+			break;
+
+		case "/user/setMyAdd":
+			controller = new setMyAddController();
+			if (method.equals("get")) {
+				map.put("id", ((UserVO) sess.getAttribute("user")).getId());
+				page = signFolderName + "addlist.jsp";
+			} else {
 				page = signFolderName + "userResult.jsp";
 			}
 			break;
